@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#004395", "outline": "#8c909f", "surface-variant": "#333539", "on-secondary-container": "#00311f", "on-surface": "#e2e2e8", "surface": "#111317", "on-error-container": "#ffdad6", "surface-tint": "#adc6ff", "secondary": "#4edea3", "surface-bright": "#37393e", "on-secondary": "#003824", "on-primary-fixed": "#001a42", "secondary-fixed": "#6ffbbe", "tertiary-fixed-dim": "#ffb95f", "error": "#ffb4ab", "on-background": "#e2e2e8", "on-secondary-fixed-variant": "#005236", "secondary-container": "#00a572", "inverse-surface": "#e2e2e8", "on-tertiary-fixed": "#2a1700", "surface-container": "#1e2024", "on-error": "#690005", "primary-container": "#4d8eff", "outline-variant": "#424754", "on-surface-variant": "#c2c6d6", "inverse-on-surface": "#2f3035", "primary-fixed": "#d8e2ff", "background": "#111317", "tertiary-container": "#ca8100", "tertiary-fixed": "#ffddb8", "on-tertiary-container": "#3e2400", "error-container": "#93000a", "on-primary": "#002e6a", "surface-container-lowest": "#0c0e12", "secondary-fixed-dim": "#4edea3", "surface-container-high": "#282a2e", "primary": "#adc6ff", "on-primary-container": "#00285d", "surface-container-highest": "#333539", "surface-container-low": "#1a1c20", "on-tertiary": "#472a00", "inverse-primary": "#005ac2", "surface-dim": "#111317", "tertiary": "#ffb95f", "primary-fixed-dim": "#adc6ff", "on-tertiary-fixed-variant": "#653e00", "on-secondary-fixed": "#002113" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "gutter-mobile": "0.5rem", "margin": "2rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "gutter": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#111317;color:#e2e2e8;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.45)] pt-safe"><div class="h-14 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[24px]">filter_vintage</span></div><span class="font-headline-md text-headline-md tracking-tight font-bold text-on-surface">Prism</span></div><div class="flex items-center gap-space-xs"><button aria-label="Search and Filter" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">tune</span></button><button aria-label="Share Profile" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">ios_share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-14 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Status Banner: Privacy & Stream State -->
+<div class="px-margin-mobile pt-space-xs pb-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-surface-container-high w-fit max-w-full">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0 animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">
+        PUBLIC ARCHIVE STREAM · Vault &amp; personal filtered
+      </span>
+</div>
+</div>
+<!-- Photographer Profile Section -->
+<section class="px-margin-mobile pt-space-xs pb-space-md flex flex-col gap-space-md">
+<div class="flex items-start gap-space-md">
+<!-- Avatar with Active Indicator -->
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-highest shadow-md">
+<img class="w-full h-full object-cover" data-alt="Cinematic artistic portrait of photographer Alex Rivera with rim lighting against a deep slate studio backdrop, holding a minimalist black rangefinder camera, 35mm film aesthetic, moody atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgSbD6xKZIhmR5mSXgzvl7gTYCZL22FbbenwigHbDx3GCX5KgG1PlS4QLf2o9yCR0sFEG7kEYXBINuRBeMwWhKFrvXME-YT2coWT_pfaqQnpkCgg9wfHNCGS6IGW1pO1ApZtpddBC_gViSPKnOGh1AZByEBQJd4qJ_jeHX8DqaAikdeCbcHjB36FW2zgevD-ikMmL4D8VWbWgUttL8d4QWGokk-9xjNSL9ziGOrIQ"/>
+</div>
+<div class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-surface text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<!-- Identity & Tags -->
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface truncate">Alex Rivera</h1>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+            Verified
+          </span>
+</div>
+<p class="font-label-md text-label-md text-outline truncate">@alexrivera</p>
+<!-- Meta badges in minimal chips -->
+<div class="flex items-center gap-space-xs mt-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">location_on</span>
+            Toronto &amp; Tokyo
+          </span>
+<span class="text-outline-variant font-label-sm">•</span>
+<a class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary hover:underline" href="#">
+<span class="material-symbols-outlined text-[14px]">link</span>
+            alexrivera.studio
+          </a>
+</div>
+</div>
+</div>
+<!-- Bio Description -->
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Digital archivist &amp; optical researcher. Curating architectural structuralism and high-contrast ambient streetscapes across Toronto and Tokyo. Examining friction between concrete and refraction.
+    </p>
+<!-- Gear metadata tag line -->
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm overflow-x-auto whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">photo_camera</span>
+<span class="text-outline">RIG:</span>
+<span class="text-on-surface">Sony A7 IV</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface">Leica M11 Monochrom</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface">Hasselblad H6D</span>
+</div>
+<!-- Primary Action Rows (Mobile Touch Targets >= 44px) -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-11 px-space-md rounded-xl bg-primary text-on-primary font-headline-md text-body-md font-semibold flex items-center justify-center gap-space-xs shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span>Slideshow (98)</span>
+</button>
+<button class="h-11 px-space-md rounded-xl bg-surface-container-high text-on-surface font-body-md font-semibold flex items-center justify-center gap-space-xs active:scale-95 transition-all" id="followBtn" onclick="this.classList.toggle('bg-surface-container-highest'); this.classList.toggle('text-primary'); this.querySelector('span:last-child').textContent = this.querySelector('span:last-child').textContent === 'Follow' ? 'Following' : 'Follow';">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Follow</span>
+</button>
+<button aria-label="Share Archive" class="w-11 h-11 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center active:scale-95 transition-all shrink-0">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+<!-- Archival Key Metrics (2x2 Grid) -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Mastered</span>
+<span class="material-symbols-outlined text-[16px] text-primary">raw_on</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">98 RAW</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+          Lossless 16-bit
+        </span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Series</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">collections_bookmark</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">14 Folios</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Editorial curated</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Monthly Views</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">trending_up</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">4.8k</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">+24% this week</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Chronology</span>
+<span class="material-symbols-outlined text-[16px] text-outline">history</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">2024–26</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Archival</span>
+</div>
+</div>
+</section>
+<!-- Search, Filter & View Controls -->
+<section class="px-margin-mobile flex flex-col gap-space-sm pt-space-xs pb-space-sm">
+<!-- Search Bar -->
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-9 rounded-xl bg-surface-container text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-high focus:outline-none transition-colors" placeholder="Search dispatches, optics, EXIF tags..." type="text"/>
+<button aria-label="Clear Search" class="absolute right-2.5 w-7 h-7 rounded-full flex items-center justify-center text-outline hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Category Filter Horizontal Scroll -->
+<div class="flex items-center gap-space-xs overflow-x-auto py-1 no-scrollbar -mx-margin-mobile px-margin-mobile">
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-medium shadow-sm">
+        All (98)
+      </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-medium hover:text-on-surface active:bg-surface-variant transition-colors">
+        Architectural Monoliths (34)
+      </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-medium hover:text-on-surface active:bg-surface-variant transition-colors">
+        Prism &amp; Light (28)
+      </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-medium hover:text-on-surface active:bg-surface-variant transition-colors">
+        Night Reflections (22)
+      </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-medium hover:text-on-surface active:bg-surface-variant transition-colors">
+        Hardware R&amp;D (14)
+      </button>
+</div>
+<!-- Sorting & Density Bar -->
+<div class="flex items-center justify-between py-1 pt-space-xs">
+<button class="flex items-center gap-1 font-label-md text-label-md text-on-surface font-medium px-2 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span>Chronological (Newest First)</span>
+<span class="material-symbols-outlined text-[18px] text-outline">expand_more</span>
+</button>
+<!-- Layout toggle buttons -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button aria-label="Detailed Feed View" class="w-8 h-8 rounded-md text-outline hover:text-on-surface flex items-center justify-center transition-all" id="viewList"><span class="material-symbols-outlined text-[18px]">view_agenda</span></button>
+<button aria-label="Compact Grid View" class="w-8 h-8 rounded-md bg-surface-container-high text-primary flex items-center justify-center transition-all shadow-sm" id="viewGrid"><span class="material-symbols-outlined text-[18px]">grid_view</span></button>
+</div>
+</div>
+</section>
+<!-- Feed Header -->
+<div class="px-margin-mobile pt-space-sm pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Latest Dispatches</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Nov 2026</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sensors</span>
+      Live Feed
+    </span>
+</div>
+<!-- Mobile Photo Feed Cards -->
+<section class="px-margin-mobile py-space-sm"><div class="grid grid-cols-2 gap-space-sm items-start"><div class="flex flex-col gap-space-sm"><article class="group relative flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-md"><div class="relative w-full aspect-[3/4] bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="High-resolution autumn road landscape in Petrolia Ontario, vibrant scarlet and amber maple trees creating a cinematic canopy, wet reflective asphalt after rain, shot on 35mm lens with rich analog color tones and warm rim daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlLyZRZpjPiz1-76T75yyyhyMYdKUofFtS3k8HR7iCZrZUzBgf1usQbjcYytKOFcDYvwxHRoGLmj--lJSc-s9cSmmEdhtQRj80zSs3yw5vkRHamfNuXJaZtmZk3cdVv6Y89SwhtT1LDM5NiJlsgL3pyU9UC7yp4kLRZvcIusYIWxaKq1W3KH1uqIsWEx1jevrHl0YDAnpikMy_l0xDfsiThV3nV3Poy9LNRBmxSkg"/><div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-black/30 pointer-events-none"></div><div class="absolute top-2 left-2"><span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-secondary-container/90 text-on-secondary font-label-sm text-[10px] font-semibold backdrop-blur-md"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>RAW</span></div><div class="absolute top-2 right-2"><button aria-label="Quick view" class="w-7 h-7 rounded-full bg-surface/70 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-transform"><span class="material-symbols-outlined text-[16px]">fullscreen</span></button></div><div class="absolute bottom-2 inset-x-2 flex flex-col"><span class="font-label-sm text-[10px] text-secondary-fixed flex items-center gap-0.5 truncate"><span class="material-symbols-outlined text-[12px]">pin_drop</span>Petrolia, ON</span><h3 class="font-headline-md text-body-sm font-semibold text-on-surface truncate drop-shadow-sm">Autumn Drive</h3></div></div><div class="p-2 flex flex-col gap-1"><div class="flex items-center justify-between text-outline font-label-sm text-[10px]"><span>35mm · f/4.0</span><span class="text-on-surface-variant font-medium">Nov 1</span></div><div class="flex items-center justify-between pt-0.5 text-on-surface-variant"><div class="flex items-center gap-2"><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">favorite</span><span>142</span></button><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">chat_bubble</span><span>18</span></button></div><button class="hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">bookmark</span></button></div></div></article><article class="group relative flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-md"><div class="relative w-full aspect-square bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="Brutalist glass and concrete skyscraper looking straight up during a heavy twilight rainstorm in Toronto Financial District, deep shadows, geometric architectural symmetry, Leica monochrome high-contrast style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbGl0zaeYm_lZ4n2MiwfQ8sU-eYixhsYGYjJD0Pi8pT9inl6WFlYCKuTNZ7n9tcTsWvR26ClseESyFsDCO7mTgnQWZQf0pZea1MUOnln6xrofD8lPi1o4fYXWBYCvC34883jtz0mzt8bOZrQbYetpnfMMWMl3DL6ZpXejhw464KWY2DOuCtvTXRx6r-Spa3LPKGlpRzSH3ztiErUfAGnPMnGWjjFnIDDI3Pqb1oiA"/><div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-black/30 pointer-events-none"></div><div class="absolute top-2 left-2"><span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest/80 text-on-surface font-label-sm text-[10px] backdrop-blur-md">Monochrome</span></div><div class="absolute bottom-2 inset-x-2 flex flex-col"><span class="font-label-sm text-[10px] text-secondary-fixed flex items-center gap-0.5 truncate"><span class="material-symbols-outlined text-[12px]">pin_drop</span>Toronto</span><h3 class="font-headline-md text-body-sm font-semibold text-on-surface truncate drop-shadow-sm">Concrete Vertigo</h3></div></div><div class="p-2 flex flex-col gap-1"><div class="flex items-center justify-between text-outline font-label-sm text-[10px]"><span>Leica M11 · 24mm</span><span class="text-on-surface-variant font-medium">Oct 24</span></div><div class="flex items-center justify-between pt-0.5 text-on-surface-variant"><div class="flex items-center gap-2"><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">favorite</span><span>520</span></button><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">chat_bubble</span><span>62</span></button></div><button class="hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">bookmark</span></button></div></div></article><article class="group relative flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-md"><div class="relative w-full aspect-[4/5] bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="Dramatic high alpine mountain spires of Torres del Paine in Patagonia at golden hour first light, crystalline glacier lake in foreground, mist swirling around jagged granite peaks, captured on Hasselblad medium format 100MP camera with exceptional micro-contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWMvjGbxpqyRlz5oC26ig5y5UdYQZea8GSvNOTdYygC2XfCaXiDiBQrkLEp13M9toKOOdEjOBuCIbttDJENTARByA1W6zHDdTJaNtyp9iWNAdJlbxbBYkwlowIuJ0kQP90fmlEROrNE_WuHY2hwVxNbfE2FUt8liYjq8d2Dh0smI5IJnvJYcakiegn7TJ6sifka_BT6N9UCqinOuu5-SYerm_ghJIdRbZ6wwOGh5I"/><div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-black/30 pointer-events-none"></div><div class="absolute top-2 left-2"><span class="px-1.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] font-bold backdrop-blur-md">100MP</span></div><div class="absolute bottom-2 inset-x-2 flex flex-col"><span class="font-label-sm text-[10px] text-secondary-fixed flex items-center gap-0.5 truncate"><span class="material-symbols-outlined text-[12px]">pin_drop</span>Patagonia</span><h3 class="font-headline-md text-body-sm font-semibold text-on-surface truncate drop-shadow-sm">Granite Spires</h3></div></div><div class="p-2 flex flex-col gap-1"><div class="flex items-center justify-between text-outline font-label-sm text-[10px]"><span>H6D · 50mm</span><span class="text-on-surface-variant font-medium">Oct 12</span></div><div class="flex items-center justify-between pt-0.5 text-on-surface-variant"><div class="flex items-center gap-2"><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">favorite</span><span>980</span></button><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">chat_bubble</span><span>144</span></button></div><button class="hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">bookmark</span></button></div></div></article></div><div class="flex flex-col gap-space-sm"><article class="group relative flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-md"><div class="relative w-full aspect-[4/5] bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="Abstract optical physics experiment with faceted crystal prisms creating spectral chromatic rainbow light reflections on matte black laboratory surfaces, high contrast neon laser dispersion, macro lens detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBURfFkzJ7HdWjaCBbtsPE0VQk8Ln3-3ZHe8xOoE97P-slEuXizmNT-lNRFIYDxXN-EVLAimk9yAKfOV3CGLop5vgOcH7QMpVU7wRQ1PoTFM6Gn1Kx17lMWMC0J64yr7Tf7qmlidSq3KSjcfujqNYui3rKPU8vvSKsmvy77nONVE7tjw8io-Zsb4e1KRu8dm4xIlvusyQvwP0BVNYKf8N6IThh7xMy476JWrhwkWOw"/><div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-black/30 pointer-events-none"></div><div class="absolute top-2 left-2"><span class="px-1.5 py-0.5 rounded-full bg-tertiary-container/80 text-on-tertiary-container font-label-sm text-[10px] font-semibold backdrop-blur-md">Prism 04</span></div><div class="absolute top-2 right-2"><button aria-label="Quick view" class="w-7 h-7 rounded-full bg-surface/70 backdrop-blur-md text-on-surface flex items-center justify-center active:scale-90 transition-transform"><span class="material-symbols-outlined text-[16px]">fullscreen</span></button></div><div class="absolute bottom-2 inset-x-2 flex flex-col"><span class="font-label-sm text-[10px] text-secondary-fixed flex items-center gap-0.5 truncate"><span class="material-symbols-outlined text-[12px]">pin_drop</span>Toronto Lab</span><h3 class="font-headline-md text-body-sm font-semibold text-on-surface truncate drop-shadow-sm">Refraction Study</h3></div></div><div class="p-2 flex flex-col gap-1"><div class="flex items-center justify-between text-outline font-label-sm text-[10px]"><span>90mm Macro · f/2.8</span><span class="text-on-surface-variant font-medium">Oct 29</span></div><div class="flex items-center justify-between pt-0.5 text-on-surface-variant"><div class="flex items-center gap-2"><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">favorite</span><span>312</span></button><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">chat_bubble</span><span>45</span></button></div><button class="hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">bookmark</span></button></div></div></article><article class="group relative flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-md"><div class="relative w-full aspect-[3/4] bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="Dense neon light reflections in dark wet pavement alley in Shinjuku Tokyo at night, glowing kanji signs reflected in puddles, cinematic cyberpunk street photography with cyan and magenta hues, shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtdANfaQCE7wbme5mrjhUprS7hR5OU8SE-fnv-bv2v7VK0GvV06mQ1obJYUMfuWU6kuR3T1iFtXdIvZgOmyCPJwZxrJSB--0zLkzRtxZBin02X8L95gxUJTalfizwurWirWbPoc_7_VlyWcwUuNP7H50mCdZHku_RFPHMCSHf6WcX88057Vzh4YLWaMYg5D_l4SK5fkZudcQUnSYBOXRPDzAtapQKe-lO2zNXXfa0"/><div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-black/30 pointer-events-none"></div><div class="absolute top-2 left-2"><span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest/80 text-on-surface font-label-sm text-[10px] backdrop-blur-md">Nocturne</span></div><div class="absolute bottom-2 inset-x-2 flex flex-col"><span class="font-label-sm text-[10px] text-secondary-fixed flex items-center gap-0.5 truncate"><span class="material-symbols-outlined text-[12px]">pin_drop</span>Shinjuku</span><h3 class="font-headline-md text-body-sm font-semibold text-on-surface truncate drop-shadow-sm">Shinjuku Inversion</h3></div></div><div class="p-2 flex flex-col gap-1"><div class="flex items-center justify-between text-outline font-label-sm text-[10px]"><span>28mm · f/2.0</span><span class="text-on-surface-variant font-medium">Oct 18</span></div><div class="flex items-center justify-between pt-0.5 text-on-surface-variant"><div class="flex items-center gap-2"><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">favorite</span><span>841</span></button><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">chat_bubble</span><span>119</span></button></div><button class="hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">bookmark</span></button></div></div></article><article class="group relative flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-md"><div class="relative w-full aspect-square bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="Arctic sea vapor rising over dark fjord at dusk in Senja Norway, deep indigo waters and snow dusted ridges, ethereal Nordic minimalist atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRRBZnJX5iD4Fa9mk7Q5DfbHyrIGDrdiqITE145xAYEe_FBqRqJYD4ITnxCrIzTQmFQDXMfXZOqKscWWpJpFhH5iqkRC_nW22AVECK-94sGuEqAn2M0-Gh-t_4W2bUkBqlPvFQVFQmK9BpPFerM9lRbmUMmWved22Pi4LM98Qq6BwLD-QF3bm-Z6IsrF1OAyKmYvN_ZFPrUZZf55N_UQMPzsD3sBjznomvksIvito"/><div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-black/30 pointer-events-none"></div><div class="absolute bottom-2 inset-x-2 flex flex-col"><span class="font-label-sm text-[10px] text-secondary-fixed flex items-center gap-0.5 truncate"><span class="material-symbols-outlined text-[12px]">pin_drop</span>Senja, Norway</span><h3 class="font-headline-md text-body-sm font-semibold text-on-surface truncate drop-shadow-sm">Indigo Sound</h3></div></div><div class="p-2 flex flex-col gap-1"><div class="flex items-center justify-between text-outline font-label-sm text-[10px]"><span>Sony A7 · 70mm</span><span class="text-on-surface-variant font-medium">Oct 06</span></div><div class="flex items-center justify-between pt-0.5 text-on-surface-variant"><div class="flex items-center gap-2"><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">favorite</span><span>654</span></button><button class="flex items-center gap-0.5 text-[11px] hover:text-on-surface"><span class="material-symbols-outlined text-[15px]">chat_bubble</span><span>83</span></button></div><button class="hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">bookmark</span></button></div></div></article></div></div></section>
+<!-- Curator's Highlights & Deep Cuts (Editorial Bento Showcase) -->
+<section class="px-margin-mobile pt-space-md pb-space-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">star</span>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Curator's Highlights</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Exhibition Grade</span>
+</div>
+<!-- Editorial Hero Showcase Card -->
+<div class="flex flex-col rounded-2xl bg-surface-container-high overflow-hidden shadow-xl p-space-sm gap-space-sm">
+<div class="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Dramatic high alpine mountain spires of Torres del Paine in Patagonia at golden hour first light, crystalline glacier lake in foreground, mist swirling around jagged granite peaks, captured on Hasselblad medium format 100MP camera with exceptional micro-contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWMvjGbxpqyRlz5oC26ig5y5UdYQZea8GSvNOTdYygC2XfCaXiDiBQrkLEp13M9toKOOdEjOBuCIbttDJENTARByA1W6zHDdTJaNtyp9iWNAdJlbxbBYkwlowIuJ0kQP90fmlEROrNE_WuHY2hwVxNbfE2FUt8liYjq8d2Dh0smI5IJnvJYcakiegn7TJ6sifka_BT6N9UCqinOuu5-SYerm_ghJIdRbZ6wwOGh5I"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-bold">
+            100MP Hasselblad Master
+          </span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Torres del Paine, Patagonia</span>
+<span>H6D-100c · 50mm · f/5.6</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">First Light on Granite Spires</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Sub-zero wind conditions atop the southern ridge. 16-bit color depth captures subtle gradient separation between illuminated glaciers and twilight basalt shadows.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="h-9 px-3 rounded-lg bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-medium flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Inspect RAW (142MB)</span>
+</button>
+<span class="font-label-sm text-label-sm text-outline">1.2k visual inspections</span>
+</div>
+</div>
+<!-- Two-column sub-highlights -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="flex flex-col rounded-xl bg-surface-container p-2.5 gap-2">
+<div class="relative aspect-square rounded-lg overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Spiral minimalist architectural staircase in brutalist concrete Kyoto pavilion, zen interior lighting, Leica monochrome geometric fine art photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc3KTvrYOJZf5BLYUnu3z3kih7K8YJcnxG1wK-Gt5g0JCfxXiAJMzklw0rznaEBvxd4tgqiq6j6JeRqIZjqTjz3-pbBVMiUiAV6_1qMqxwXd5lA2N6q9hdNXDJx-6Ce-NL3YVMdw6THi8ze4jVjHmMqHB2s5ijoy9Y7ol6loKYZZCBpMrUYj87-l5oBIBCVPG8zy0ahkmrNJWGCOo8OL6vNpxFokigkq1qQp45AqI"/>
+<span class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/80 text-on-surface font-label-sm text-label-sm backdrop-blur-sm">Kyoto</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Helical Void in Concrete</span>
+<span class="font-label-sm text-label-sm text-outline">Leica M11 · 28mm</span>
+</div>
+<div class="flex flex-col rounded-xl bg-surface-container p-2.5 gap-2">
+<div class="relative aspect-square rounded-lg overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Arctic sea vapor rising over dark fjord at dusk in Senja Norway, deep indigo waters and snow dusted ridges, ethereal Nordic minimalist atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRRBZnJX5iD4Fa9mk7Q5DfbHyrIGDrdiqITE145xAYEe_FBqRqJYD4ITnxCrIzTQmFQDXMfXZOqKscWWpJpFhH5iqkRC_nW22AVECK-94sGuEqAn2M0-Gh-t_4W2bUkBqlPvFQVFQmK9BpPFerM9lRbmUMmWved22Pi4LM98Qq6BwLD-QF3bm-Z6IsrF1OAyKmYvN_ZFPrUZZf55N_UQMPzsD3sBjznomvksIvito"/>
+<span class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/80 text-on-surface font-label-sm text-label-sm backdrop-blur-sm">Senja, Norway</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Vapor on Indigo Sound</span>
+<span class="font-label-sm text-label-sm text-outline">Sony A7 · 70mm</span>
+</div>
+</div>
+</section>
+<!-- Visitor Conversion Card (No Ad Trackers, Google SSO CTA) -->
+<section class="px-margin-mobile pt-space-md pb-space-lg">
+<div class="p-space-md rounded-2xl bg-surface-container flex flex-col gap-space-md shadow-xl text-center items-center">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">photo_library</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Curate Without Noise</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs leading-relaxed">
+          Zero ad algorithms. Full-fidelity RAW previewing. Claim your photographer archive on Prism today.
+        </p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-xs font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">shield</span>
+          No Ad Trackers
+        </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">verified</span>
+          Lossless Storage
+        </span>
+</div>
+<button class="w-full h-12 px-space-md rounded-xl bg-surface-bright text-on-surface font-body-md font-semibold flex items-center justify-center gap-space-sm active:scale-95 transition-all shadow-md">
+<!-- Clean Inline Google 'G' glyph -->
+<svg class="w-5 h-5 shrink-0" viewbox="0 0 24 24">
+<path d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" fill="#EA4335"></path>
+<path d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z" fill="#4285F4"></path>
+<path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.1s.7 5.4 1.9 7.8l3.7-2.9z" fill="#FBBC05"></path>
+<path d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16c1.8 3.7 5.6 6.3 10.1 6.3z" fill="#34A853"></path>
+</svg>
+<span>Continue with Google</span>
+</button>
+<span class="font-label-sm text-label-sm text-outline">
+        By joining you accept Prism Archivist Terms of Service
+      </span>
+</div>
+</section>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.55)]" data-active-classes="text-primary font-medium"><div class="flex justify-around items-center h-16 px-gutter-mobile"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 transition-colors text-primary font-medium" data-path="feed" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm tracking-wide">Stream</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="explore" href="#"><span class="material-symbols-outlined text-[24px]">collections_bookmark</span><span class="font-label-sm text-label-sm tracking-wide">Series</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="slideshow" href="#"><div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">slideshow</span></div></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-sm text-label-sm tracking-wide">Profile</span></a></div></nav></body></html>

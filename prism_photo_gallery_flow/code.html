@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#00a572", "secondary-fixed-dim": "#4edea3", "on-primary-fixed-variant": "#004395", "surface": "#111317", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb95f", "on-secondary-fixed": "#002113", "on-surface": "#e2e2e8", "surface-container-low": "#1a1c20", "inverse-primary": "#005ac2", "on-secondary": "#003824", "secondary-fixed": "#6ffbbe", "error-container": "#93000a", "primary-fixed-dim": "#adc6ff", "on-primary": "#002e6a", "inverse-surface": "#e2e2e8", "tertiary-container": "#ca8100", "surface-container-lowest": "#0c0e12", "on-tertiary-fixed": "#2a1700", "surface-tint": "#adc6ff", "surface-container": "#1e2024", "on-tertiary-fixed-variant": "#653e00", "surface-container-highest": "#333539", "error": "#ffb4ab", "surface-container-high": "#282a2e", "surface-bright": "#37393e", "on-error": "#690005", "on-secondary-fixed-variant": "#005236", "tertiary-fixed": "#ffddb8", "primary-fixed": "#d8e2ff", "on-surface-variant": "#c2c6d6", "primary": "#adc6ff", "secondary": "#4edea3", "outline-variant": "#424754", "surface-dim": "#111317", "on-tertiary": "#472a00", "inverse-on-surface": "#2f3035", "outline": "#8c909f", "surface-variant": "#333539", "on-secondary-container": "#00311f", "background": "#111317", "on-tertiary-container": "#3e2400", "on-primary-container": "#00285d", "primary-container": "#4d8eff", "on-background": "#e2e2e8", "on-primary-fixed": "#001a42", "tertiary": "#ffb95f" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter-mobile": "0.5rem", "gutter": "1rem" }, "fontFamily": { "headline-xl": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "label-sm": [ "JetBrains Mono" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "label-md": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-md": [ "20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between py-6 px-4 shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="flex flex-col gap-6"><div class="flex items-center gap-3 px-2"><img alt="Prism Photo Gallery Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBnP9ZJcCgGhJShUeJtVLWkSXDPCKegavzAD8-tIEeVCLaXZFtpgSCM15LgG6zXpYLhKmEyY92LjZv362tCf_mty0j2IcetIeC4NBrEhi0nVumUCJvqu-9HbOWBAA4DJvVfdgB3yEh3Za9-RTYOF_eCCwxyOiJUj1Ipu9-KNX2qEnhCEAasBUL52jB8r8c__ZiH4Cz6cZ9EyqIX1puEbDj80s450u4T5FBVkdU4CmGM"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Prism Photos</span></div><nav class="flex flex-col gap-1.5" data-active-classes="bg-surface-container-high text-primary font-bold"><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors bg-surface-container-high text-primary font-bold" data-path="all-photos" href="#"><span class="material-symbols-outlined text-[20px]">photo_library</span><span>All Photos</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="public-stream" href="#"><span class="material-symbols-outlined text-[20px]">public</span><span>Public Stream</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="favorites" href="#"><span class="material-symbols-outlined text-[20px]">favorite</span><span>Favorites</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="albums" href="#"><span class="material-symbols-outlined text-[20px]">collections_bookmark</span><span>Albums</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="vault" href="#"><span class="material-symbols-outlined text-[20px]">lock</span><span>Private Vault</span></a></nav></div><div class="flex flex-col gap-3 px-2"><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest"><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-outline">Storage Used</span><span class="font-label-md text-label-md text-on-surface">148.4 GB / 500 GB</span></div><span class="material-symbols-outlined text-secondary text-[20px]">cloud_done</span></div><div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-secondary rounded-full w-[30%]"></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="h-16 w-full px-8 flex items-center justify-between gap-6"><div class="flex-1 max-w-2xl relative flex items-center"><span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-11 pr-24 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm transition-all" placeholder="Search by location, tags, date... (e.g. Kyoto, #architecture, 2024)" type="text"/><div class="absolute right-2.5 flex items-center gap-1.5"><kbd class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-4"><div class="hidden xl:flex items-center p-1 rounded-lg bg-surface-container-low gap-1"><button class="p-1.5 rounded text-on-surface bg-surface-container hover:text-primary transition-colors flex items-center" title="Dense Grid View" type="button"><span class="material-symbols-outlined text-[18px]">grid_view</span></button><button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors flex items-center" title="Masonry View" type="button"><span class="material-symbols-outlined text-[18px]">auto_awesome_mosaic</span></button><button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors flex items-center" title="Editorial Canvas" type="button"><span class="material-symbols-outlined text-[18px]">view_day</span></button></div><button class="flex items-center gap-2 h-9 px-4 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary transition-all font-body-md text-body-md font-semibold" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Upload</span></button><div class="relative group flex items-center"><div class="flex items-center gap-3 p-1.5 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHy6XK-5I2k-d-y8yzyuE98QjR3kq8OBbme7p8rn-QBje6PyV_TSW01IHt1YFXbP3LlunakH2U8ql3n90qMusl5A644fIvvWXgdUA-ukxIcOsla4pFWLOjAEKRWoY86eFCMV8ipJbO91mTJtmiRMy8-puGulT6NnB5JagvuCOHN2c27hzBgq-BUfmCx1TXu5bVFRC-Xkby07tUdQBAwRdu_MNNXlRd71Xw80uF_ek"/><div class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></div></div><div class="hidden md:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Alex Rivera</span><span class="font-label-sm text-label-sm text-outline leading-tight">Visitor Mode Off</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div><div class="absolute right-0 top-full mt-2 w-72 p-3 rounded-xl bg-surface-container-high shadow-[0_20px_48px_rgba(0,0,0,0.6)] backdrop-blur-2xl hidden group-hover:flex flex-col gap-3 z-50"><div class="flex flex-col px-2 py-1"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Google Account Connected</span><span class="font-body-sm text-body-sm text-on-surface truncate">alex@creativestudio.io</span></div><div class="h-px bg-surface-variant w-full"></div><div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container"><div class="flex flex-col"><span class="font-body-sm text-body-sm font-medium text-on-surface">Visitor Mode</span><span class="font-label-sm text-label-sm text-outline">Hide private metadata</span></div><label class="relative inline-flex items-center cursor-pointer"><input class="sr-only peer" type="checkbox" value=""/><div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary-container"></div></label></div><div class="flex flex-col gap-1"><a class="flex items-center gap-2.5 px-2 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="account-settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Preferences</span></a><a class="flex items-center gap-2.5 px-2 py-1.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors font-body-sm text-body-sm" data-path="login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span>Sign Out</span></a></div></div></div></div></div></header><main class="w-full pt-16 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Slideshow Fullscreen Overlay (Initially hidden) -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/95 backdrop-blur-2xl hidden flex-col justify-between p-8 transition-opacity duration-300" id="slideshow-hud">
+<!-- Top HUD: Timer & Controls -->
+<div class="w-full flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Prism Theater</span>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span> 4K Ultra Canvas
+        </span>
+</div>
+<!-- Playback Pill -->
+<div class="flex items-center gap-4 bg-surface-container-low/80 backdrop-blur-md px-5 py-2 rounded-full shadow-xl">
+<button class="text-primary hover:text-on-primary-container transition-colors flex items-center" id="toggle-play-btn">
+<span class="material-symbols-outlined text-[24px]">pause</span>
+</button>
+<div class="flex items-center gap-2">
+<!-- Circular progress indicator -->
+<svg class="w-5 h-5 -rotate-90 transform" viewbox="0 0 24 24">
+<circle class="text-surface-container-highest" cx="12" cy="12" fill="none" r="9" stroke="currentColor" stroke-width="2.5"></circle>
+<circle class="text-primary" cx="12" cy="12" fill="none" r="9" stroke="currentColor" stroke-dasharray="56.5" stroke-dashoffset="18" stroke-linecap="round" stroke-width="2.5"></circle>
+</svg>
+<span class="font-label-md text-label-md text-on-surface">00:03 / 00:05</span>
+</div>
+<span class="w-px h-3.5 bg-outline-variant/40"></span>
+<button class="text-on-surface-variant hover:text-on-surface text-[18px] flex items-center">
+<span class="material-symbols-outlined text-[20px]">shuffle</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-[20px]">fullscreen_exit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-error-container hover:text-on-error-container transition-colors" id="close-slideshow">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Center Stage with Chevrons -->
+<div class="relative w-full flex-1 flex items-center justify-center my-6">
+<button class="absolute left-4 w-12 h-12 rounded-full bg-surface-container-high/60 backdrop-blur-md text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-all transform hover:-translate-x-1 shadow-lg">
+<span class="material-symbols-outlined text-[26px]">arrow_back_ios_new</span>
+</button>
+<div class="max-w-5xl max-h-[75vh] w-full h-full flex flex-col items-center justify-center rounded-2xl overflow-hidden relative shadow-2xl bg-surface-container-low">
+<img alt="Slideshow featured frame" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqNCTSmh58tCL_dnvOZ7FB6w2wZHLF9hcTzj7YYRmZXjyUTJlH2MyEFlifWIkyYdnlhgnJEFfIdvdYqTVMDbFmVUvJsa5h17GCQQ_TBJvH8dzAj5hKvXfEMSoqrPpXd1bYP21E75LN1vAE9azH4wuWDgTFORR1Dau-iHLhehbnPUEQwpnvswRAUudnnl_hQ3RQXlLTz6RCQXme8qYyxP5nKtmyi-eOBpw85tL_TNR4P44tfq-9JzF"/>
+<div class="absolute bottom-4 left-6 right-6 flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-medium">Prismatic Mirror Study No. 4</span>
+<span class="font-label-sm text-label-sm text-outline">Petrolia, ON • Nov 1, 2026 • 24mm f/2.8 1/500s ISO 100</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary-fixed flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Public Curated
+          </span>
+</div>
+</div>
+<button class="absolute right-4 w-12 h-12 rounded-full bg-surface-container-high/60 backdrop-blur-md text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-all transform hover:translate-x-1 shadow-lg">
+<span class="material-symbols-outlined text-[26px]">arrow_forward_ios</span>
+</button>
+</div>
+<!-- Bottom Thumbnail Reel -->
+<div class="w-full flex items-center justify-center gap-3 overflow-x-auto py-2">
+<div class="w-14 h-14 rounded-lg overflow-hidden ring-2 ring-primary cursor-pointer shrink-0 opacity-100 scale-105 transition-all">
+<img alt="Thumb" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqNCTSmh58tCL_dnvOZ7FB6w2wZHLF9hcTzj7YYRmZXjyUTJlH2MyEFlifWIkyYdnlhgnJEFfIdvdYqTVMDbFmVUvJsa5h17GCQQ_TBJvH8dzAj5hKvXfEMSoqrPpXd1bYP21E75LN1vAE9azH4wuWDgTFORR1Dau-iHLhehbnPUEQwpnvswRAUudnnl_hQ3RQXlLTz6RCQXme8qYyxP5nKtmyi-eOBpw85tL_TNR4P44tfq-9JzF"/>
+</div>
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-surface-container-high cursor-pointer shrink-0 opacity-40 hover:opacity-80 transition-all">
+<img class="w-full h-full object-cover" data-alt="Vivid neon prism reflection of industrial hardware and macro circuit details with deep cyan and amber shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_GFW1mFmMSuif9WxzheF77tfwP8ggtm-T_xmL1ej1C8aD6q_dxRexXlWC5wyHhWPIVeeJZM4M_Oo-d1uPk9IGgv5njrA0OyMoT7fEAITaVIODvl1Vt7maeE12G7R_8QpbCY51reolHscmzzmAhcwTtlEwRBHcFhur_M2ylXdl_1hBtuLVYJRooEJMZkrnuURLri1ac5BSbSS88u7epalMoJiCzZEc2H_6WGvb0HM"/>
+</div>
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-surface-container-high cursor-pointer shrink-0 opacity-40 hover:opacity-80 transition-all">
+<img class="w-full h-full object-cover" data-alt="Reflected vertical glass tube with chromatic aberrations in studio darkness, dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFCpBe3nQ2XBdSOOEHQeGJbNg7fOGQyA-L3JyLA4OEg_6T9jcdqJHzhbNeYKtL4VbynKig8BG3CjQY5pf3vSabyP5F072xKjMHEbH7nlJPQbulfgpBb7AzmcpNPT8nOtQuR5oe9NHNh3_19M9KhvX0ccki24aQhsbtyiYJALDaKUhgGBECP0icH-S1HXr0wGQxjLv4dWKz3cCaFm79esxJAbUQhicZAWU-OKBuitM"/>
+</div>
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-surface-container-high cursor-pointer shrink-0 opacity-40 hover:opacity-80 transition-all">
+<img class="w-full h-full object-cover" data-alt="Kaleidoscopic lens light streaks with soft purple, orange and white geometric light streaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3bvdeIMn3ZXs5O-k1Qm5F24WSKvM_njH7Uvycmdt1zme-J4EstMj-bWyLLnDR8iE6_pQWnAimf9jl_mQTGHKuS2aUBzLEkJjbHf3dbKb7qTBKtazfqX-eIOLtv6YG0ApEUEexFkXMTvkUxkT5qD5SAGFu-eqcFivyYJ4YvvzcGs583ev2M8XBgitsxn4-08LZfmY0ldA2UPfzy1fiI_wCn-cEHL_0PkBJY4zLQDo"/>
+</div>
+</div>
+</div>
+<!-- Primary Sub-Header / Control Surface Bar -->
+<div class="w-full px-8 py-5 bg-surface-container-low flex flex-col xl:flex-row items-start xl:items-center justify-between gap-5 shadow-sm sticky top-16 z-30">
+<div class="flex flex-wrap items-center gap-3">
+<!-- Sort Selector Dropdown Pill -->
+<div class="relative inline-block text-left">
+<button class="flex items-center gap-2 h-10 px-3.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-bright transition-colors font-body-sm text-body-sm shadow-sm" id="sortDropdownBtn">
+<span class="material-symbols-outlined text-[18px] text-primary">swap_vert</span>
+<span class="font-medium">Chronological (Newest first)</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span>
+</button>
+<!-- Dropdown Menu -->
+<div class="hidden absolute left-0 mt-2 w-64 rounded-xl bg-surface-container-high shadow-2xl py-1.5 z-40" id="sortMenu">
+<a class="flex items-center justify-between px-3.5 py-2 font-body-sm text-body-sm text-primary bg-surface-container" href="#">
+<span>Chronological (Newest first)</span>
+<span class="material-symbols-outlined text-[16px]">check</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2 font-body-sm text-body-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span>Chronological (Oldest first)</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2 font-body-sm text-body-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span>Random Shuffle</span>
+</a>
+<a class="flex items-center justify-between px-3.5 py-2 font-body-sm text-body-sm text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="#">
+<span>Group by Location</span>
+</a>
+</div>
+</div>
+<!-- Privacy Filter Segmented Toggle -->
+<div class="flex items-center p-1 rounded-lg bg-surface-container gap-1 shadow-inner">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface-container-highest text-primary font-body-sm text-body-sm font-semibold shadow-sm">
+<span>All Photos</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container text-primary">142</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Public</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">98</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock</span>
+<span>Private Vault</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">44</span>
+</button>
+</div>
+<!-- Density Slider Control -->
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">view_compact</span>
+<input class="w-20 accent-primary cursor-pointer h-1 bg-surface-container-highest rounded-lg appearance-none" max="3" min="1" type="range" value="2"/>
+<span class="material-symbols-outlined text-[18px]">grid_goldenratio</span>
+</div>
+</div>
+<!-- Action Triggers -->
+<div class="flex items-center gap-3 w-full xl:w-auto justify-end">
+<!-- Slideshow Button -->
+<button class="flex items-center gap-2 h-10 px-4 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface transition-all font-body-sm text-body-sm font-medium shadow-sm group" id="open-slideshow">
+<span class="material-symbols-outlined text-[20px] text-secondary group-hover:scale-110 transition-transform">play_circle</span>
+<span>Slideshow</span>
+</button>
+<!-- Upload Trigger Button with Drop Indicator Cue -->
+<label class="flex items-center gap-2.5 h-10 px-4 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary transition-all font-body-sm text-body-sm font-semibold cursor-pointer shadow-md group">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-y-0.5 transition-transform">cloud_upload</span>
+<span>Upload Photos</span>
+<input class="hidden" multiple="" type="file"/>
+</label>
+</div>
+</div>
+<div class="px-8 py-6 flex flex-col gap-8 max-w-[1720px] w-full mx-auto">
+<!-- Interactive Upload Dropzone Banner -->
+<div class="w-full relative rounded-2xl bg-surface-container-low p-6 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden shadow-lg transition-all hover:bg-surface-container" id="dropzone-banner">
+<div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-5 z-10">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[32px]">add_photo_alternate</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Drop photos anywhere to curate</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider px-2 py-0.5 rounded bg-primary/10 text-primary font-semibold">Fast Sync</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">JPEG, PNG, RAW, and HEIC supported up to 50MB. Drag files or sync camera roll.</span>
+</div>
+</div>
+<div class="flex items-center gap-3 z-10 shrink-0">
+<button class="h-9 px-4 rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+<span>Browse Folder</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- TIMELINE SECTION 1: Petrolia, ON (Primary visual anchor inspired by reference) -->
+<section class="flex flex-col gap-4">
+<!-- Sticky Date Header -->
+<div class="flex items-center justify-between py-2 border-b-0">
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Sun, Nov 1</span>
+<span class="font-body-md text-body-md text-outline font-medium">Petrolia, ON • Studio Calibration &amp; Mirror Studies</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="font-label-sm text-label-sm text-primary hover:underline font-medium">Select All (12)</button>
+<span class="font-label-sm text-label-sm text-outline">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span> Sony A7R V
+          </span>
+</div>
+</div>
+<!-- Photo Grid matching reference vertical slice cadence -->
+<div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2.5">
+<!-- Photo Item 1 (From available image 1) -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img alt="Prismatic studio light refraction" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqNCTSmh58tCL_dnvOZ7FB6w2wZHLF9hcTzj7YYRmZXjyUTJlH2MyEFlifWIkyYdnlhgnJEFfIdvdYqTVMDbFmVUvJsa5h17GCQQ_TBJvH8dzAj5hKvXfEMSoqrPpXd1bYP21E75LN1vAE9azH4wuWDgTFORR1Dau-iHLhehbnPUEQwpnvswRAUudnnl_hQ3RQXlLTz6RCQXme8qYyxP5nKtmyi-eOBpw85tL_TNR4P44tfq-9JzF"/>
+<!-- Selection Checkbox -->
+<div class="absolute top-2 left-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[14px] text-white">check</span>
+</div>
+</div>
+<!-- Privacy Pill -->
+<div class="absolute top-2 right-2 z-10">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container/90 text-on-secondary-container backdrop-blur-md font-semibold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Public
+            </span>
+</div>
+<!-- Hover Overlay Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5 gap-1.5">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-sm text-label-sm font-semibold truncate">PET_9041.RAW</span>
+<button class="text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">24mm • f/2.8 • 1/500s</span>
+<div class="flex items-center gap-1.5 pt-1">
+<button class="w-6 h-6 rounded bg-surface-container-high/80 text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" title="Launch Slideshow">
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+</button>
+<button class="w-6 h-6 rounded bg-surface-container-high/80 text-on-surface flex items-center justify-center hover:bg-surface-bright transition-colors" title="Metadata">
+<span class="material-symbols-outlined text-[13px]">info</span>
+</button>
+<button class="w-6 h-6 rounded bg-surface-container-high/80 text-on-surface flex items-center justify-center hover:bg-surface-bright transition-colors" title="Share">
+<span class="material-symbols-outlined text-[13px]">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Photo Item 2 (Burst Stack Indicator) -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Vertical kaleidoscope composition of illuminated crystal lamp with golden orange and amber refractions on polished wood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyOV1alAE_iuXnDyA0lUyQQBeahtBo_XXhhjQse9YJ9TQbyA9O2_RoTsQFh2wJdz-eYZH7MccTlb05FzZ5d8RSglL9MOb2jUxNuaLTnLo5LI0f784hovZSvkB3J7HeZWcgq8mKcGrNHjOgr-QZ6AJ-LL87tUbatoHSmHF4d0jNJz1aApngXCJiaTMMqip0c9AYEUStgoF44oKNdW6KghKESFCu4VrcsrRhHt46pe0"/>
+<div class="absolute top-2 left-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest/70 backdrop-blur-md flex items-center justify-center"></div>
+</div>
+<!-- Stack Indicator -->
+<div class="absolute top-2 right-2 z-10 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-1.5 py-0.5 rounded text-on-surface font-label-sm text-label-sm font-semibold">
+<span>2</span>
+<span class="material-symbols-outlined text-[14px]">filter_none</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5 gap-1.5">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate">PET_9042.RAW</span>
+<span class="font-label-sm text-label-sm text-outline">Burst Series (2)</span>
+</div>
+</div>
+<!-- Photo Item 3 (Private Vault Badge) -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Reflected vertical glass tube with chromatic aberrations in studio darkness, dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFw3jq_ICkFTMQnS094Pe7k9vkLX9zClaPINCdry4Ibss_lB-b336q7RuJOTSR0NJI7BllxcEod8sIt3ErYIEjOlxjFZsDZQFGYbZnPgJyAaY_4ZNM_I94rfpQUXQxIUJ78uD1jd1GLV6QSbH5T-ZSfXpsyjyPBEp0J5TaRY_EDokqhFfrZCqdpt7tNsSIPRT9nsm2sAoXyr_JyfZCD8cIOVSjqBQ8Kp0c-iqlsUU"/>
+<div class="absolute top-2 right-2 z-10">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-container/80 text-on-tertiary-container backdrop-blur-md font-semibold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">lock</span> Vault
+            </span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface truncate">PET_9043.RAW</span>
+<span class="font-label-sm text-label-sm text-tertiary">Restricted Metadata</span>
+</div>
+</div>
+<!-- Photo Item 4 -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Pink and lavender vertical light flare through textured patterned glass with soft ambient shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgVSDPcXyZab3JPPKMX_Og7c1E5-Krz-yoQ3ovFOU9zYTOXdm_KZqJJTs4pMLBYnOJ4TToPBqmjIqDzEH3H73hGIhh0deNOW2G52f4-JDy82KePc3c-bGH5ds9SfPC_mlUmXS2xzNsafJbKaVyXfWoG-kUiC-2GMVyREXVr3HLe5HsNTxJmg0Ji3STBlLjlSkPc3pivDfw8qBxS0tWgVhBilyb8IKrkEUT9GBhSeI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface">PET_9044.JPG</span>
+</div>
+</div>
+<!-- Photo Item 5 -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Warm amber studio light cylinder with futuristic LED patterns reflecting downward in darkness" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC02qDEGgSu86o2nqZnGTqITvzy-Q4nJmJjlOpc3mX9WingYtXvSIv2QI5elPNCs8YYBw7tQXfYFilOo_0E824eWtNWBENr4e-Bie7XpiX2ULqYUg5fvkz3ng6Q6TYcqH4khfvK0NO_oehdr3sxeIaJgVN11_ahVnw01TCQfjGuMPsfDV5xjCtdyATZyHdWVRYOA3U4lgwf_GFnI2IJnOSsaHZD2le1ylZVHRBNtaQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface">PET_9045.JPG</span>
+</div>
+</div>
+<!-- Photo Item 6 -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Kaleidoscopic lens light streaks with soft purple, orange and white geometric light streaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9kK6QiKlAfeCFcXQQ4NK3sotNKgdoh9aZFQuxXCuswcTLV34aB9BelTFthgB7ryT1mH_Uw8z7QRiLJ2xhn3hWLQBdXFxOL84z2rj6b7ylSY3MiEjo0nb2j3DKTj38Md-QWBrpfgIhPtOaaxYOisEocfBXP6nGkoRHh2top-AQ7wxkX852mlJLpLEnECY0wOvNxDFgwHhyVBnyvB_QZaJWO8Piawld-C9CzaoC2Xo"/>
+<div class="absolute top-2 right-2 z-10">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container/90 text-on-secondary-container backdrop-blur-md font-semibold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Public
+            </span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface">PET_9046.JPG</span>
+</div>
+</div>
+<!-- Photo Item 7 -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Macro optical glass blur and electronics workshop surface with blue and yellow wires in intentional motion blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaqyfeERmqzlHd9JX-DnLNXyE730RjypQZozYxCvCt3T9fIEyU8JYOwhXrBJdTF_IDWdGt_j80xFBwTlQpDlNVwvGBKFXOUOaWF4UycIRtcLOmM-NwdWThBLdTw8nVxwBhqwuLY7wIJP7im6jaKdiUaqtQ8FgUTBjyA6V2hfdjOFPV5XAroOGQ455IYWD8xlFqeh4mgreq_sdoOeB46vEktzl2v8HlW6FXX8kpT0A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface">PET_9047.RAW</span>
+</div>
+</div>
+<!-- Photo Item 8 -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Rotary workshop lens reflection with warm halogen workbench lighting and metallic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgsHtU6cPFBcPnGFUTVli6TA6JPP4moS19v5aciC2W-bbHyBddDTtKDGrIRXkFddfmsK8AzxwI7ngFkbUIYf0Kd9KeInw10EPpdqTlViCXGJOKuCszIjznMP0arpOEdk4zPG_J_7FhEB05qjKObs8mUMe-rzb5Zzu-zcdHXDdvMsPf0aVo-JB2SA7QoMrMdRdzaFgWpDd0YARGkePbaFpUrThOJrrykozWiI0eOxA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface">PET_9048.JPG</span>
+</div>
+</div>
+<!-- Photo Item 9 -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Intentional camera motion blur of lab electronic test bench and oscilloscope display in high contrast monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8crvi9JvftVu-Fpx_EL9pl9DgHTZeNnQlgjxzBLt_vwUgMSCxdY-yNsb0Dq-QpmIOZcknsHJ1b1qOyMpYIlZAYUl-fFHRauHwOFJgC0L6XFDZoJHcubWN7WWcYL3D2fKSw1Mjsr-3D2LP7zbUM0zGM8pgovCgGRD3zCK1SoJnqAfIT2KrOOkrKqtf9gT9tjJRQahvGbhahtB0xW2-YRwAM656hkxjcIErfFKJoUE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface">PET_9049.RAW</span>
+</div>
+</div>
+<!-- Photo Item 10 -->
+<div class="group relative aspect-[9/16] rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.02] hover:z-20">
+<img class="w-full h-full object-cover" data-alt="Overexposed bright laboratory workbench with high tech cables and glass optics reflection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvgU9YjEiSF08iOoTcYqJdsLqD_lc4ybJHvfnf2rXBlYagPe-mHqaw6Ldl6_36mbu2Sb_AdyNBBVsFNKIVQjeqkUyyC2Y-65qBb340MjancPWAosOvpC9exzJLMPltsWhE61pP806HR8I8fuQ0hJw8FHTSeXMlJOpFPtkMBGdf7sn9ZK_PmBZDxkclW-_lEWpWi4PoxCV8MjqSPpV3E3CoCKpiEnZBfAFvbWa3Xdc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface">PET_9050.JPG</span>
+</div>
+</div>
+</div>
+</section>
+<!-- TIMELINE SECTION 2: Yesterday - Toronto, ON (Masonry & Landscape Variety) -->
+<section class="flex flex-col gap-4 pt-4">
+<div class="flex items-center justify-between py-2 border-b-0">
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Yesterday</span>
+<span class="font-body-md text-body-md text-outline font-medium">Toronto, ON • Architectural &amp; Street Studies</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="font-label-sm text-label-sm text-primary hover:underline font-medium">Select All (6)</button>
+<span class="font-label-sm text-label-sm text-outline">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span> Queen West &amp; Financial District
+          </span>
+</div>
+</div>
+<!-- Asymmetrical Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<!-- Prominent Landscape Card -->
+<div class="group relative md:col-span-2 aspect-[16/10] rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-lg transform transition-all duration-200 hover:scale-[1.01]">
+<img class="w-full h-full object-cover" data-alt="Misty nighttime architectural perspective of brutalist glass and concrete skyscrapers with emerald and neon amber street reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhBTm6yFqXnPqqICXl5QvR8angyj1SEjAp7996sNF1_IRGTGpL2VyzWXBwokPTHyplOxcTXHfT1PbwIPLLpVkLUGsedPDLdxpoCXGPe7pvhT1RJR2WrKwnglv_TgJuRu4E4Q4Hpv3y-G-BDeOJRV_EZ5uEKHNIoNZ0qoPnOld9ZF_9wirq_z9GAX59Iw2s2DR4PzOpg506ZCc-r38u42GpQG7gGW3GQs07Tw6n5Gw"/>
+<div class="absolute top-3 left-3 z-10 flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-container/90 text-on-secondary-container backdrop-blur-md font-semibold flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Public Stream
+            </span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container-lowest/80 text-on-surface backdrop-blur-md">
+              Toronto, ON
+            </span>
+</div>
+<div class="absolute top-3 right-3 z-10 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface flex items-center justify-center hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+<!-- Bottom Card Detail Strip -->
+<div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/70 to-transparent flex items-center justify-between text-on-surface">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-medium text-white">Financial District Monolith</span>
+<span class="font-label-sm text-label-sm text-outline">35mm • f/1.4 • 1/120s • ISO 800 • Oct 31, 2026 21:14</span>
+</div>
+<button class="h-8 px-3 rounded-lg bg-surface-container-high/90 hover:bg-primary hover:text-on-primary text-on-surface font-body-sm text-body-sm transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">slideshow</span>
+<span>Present</span>
+</button>
+</div>
+</div>
+<!-- Vertical Medium Card 1 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.01]">
+<img class="w-full h-full object-cover" data-alt="Minimalist subway stairs bathed in warm amber and sodium vapor light with crisp architectural leading lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDECCeAEyDvjNCjFM-fB-2iyj_C8t677Lnw8Bh8Hmm1Ch30-iR3JZ4CDCHxMFo5-amwfDQsJ5LbkHNcbAUGmeViJ5m5OyU3lLUUxaW58MDH6kideK6u63FPEz32gPTjOKIULDwHq_enHxDI3LyC1Dv-0xzEsqGaYVvO0Ba9ndY9Ntfoiz5BDsZ86n7gJgyJBcIqlYZxYmtcg6ZzkPpP6UF53CJZwQYDVmjYhqdSkYQ"/>
+<div class="absolute top-3 right-3 z-10">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-container/80 text-on-tertiary-container backdrop-blur-md font-semibold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">lock</span> Private
+            </span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3.5">
+<span class="font-body-md text-body-md font-semibold text-white">Subway Incline #02</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">50mm • f/2.0 • 1/250s</span>
+</div>
+</div>
+<!-- Vertical Medium Card 2 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-md transform transition-all duration-200 hover:scale-[1.01]">
+<img class="w-full h-full object-cover" data-alt="Rain-slicked asphalt pavement reflecting red neon brake lights and street lamps in Toronto twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4h6Jysg6Qu6A4HCBR0PctNde8glV98-kfyKPsrzKltdqThtYHc8g2yows9cP0zQL3aHIVtAo_SeAunNBr-FTeF7mfn-X7HUPtFUvhma4Qxul1xFY1zb489N9NSaHhHieuB7yXhUyj0VB94C4pAP7vCNHugNKrgdaBotWuTeZXEzIJ6TatLxynQMxdwZre0-w-O-kmqXUJmHyY_oO7G3-lHX1tlrDgJ6vlK6ABOow"/>
+<div class="absolute top-3 left-3 z-10">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container/90 text-on-secondary-container backdrop-blur-md font-semibold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Public
+            </span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3.5">
+<span class="font-body-md text-body-md font-semibold text-white">Queen West Pavement Study</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">85mm • f/1.8 • 1/400s</span>
+</div>
+</div>
+</div>
+</section>
+<!-- TIMELINE SECTION 3: October 28, 2026 (Dense archive row) -->
+<section class="flex flex-col gap-4 pt-4 pb-20">
+<div class="flex items-center justify-between py-2 border-b-0">
+<div class="flex items-baseline gap-3">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">October 28, 2026</span>
+<span class="font-body-md text-body-md text-outline font-medium">Studio Archive &amp; Hardware R&amp;D</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">8 Media Files</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+<!-- Repeating archive miniatures -->
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-sm hover:scale-105 transition-all">
+<img class="w-full h-full object-cover" data-alt="Colorful braided electrical jumper wires connected to clean white breadboard in laboratory closeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiJHiIK2lAdinpFvI5L0lLn1eIe2AscTeY4aO2LSo1A3OnaZjce133Ym5QvGFb1jq2gegzteBWP9TUEr6IpwgPOM3aehB836eSHA6dDRZOe_D8VhWnthRqgppkBSCJWlFHLj71w86lNV2KASZ-efr4H1jCnu2jgVSrBKAWvpIY75GgWNob3pHilLd2xOjjeTdKPD_qD8aTWONM4Hk0fcvafT2jI54XwL3rBVXoO78"/>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-7 h-7 rounded-full bg-surface-bright text-on-surface flex items-center justify-center hover:bg-primary"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+</div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-sm hover:scale-105 transition-all">
+<img class="w-full h-full object-cover" data-alt="Symmetrical vertical mirror prism abstraction with vivid electric blue and magenta cables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtxzp6v4uoNKGd2TAPkxE4fdfcjrBZq_ab1J2DcewVNGaH_jn7tn8uH5ZTQtHffArpmbod-p4Bi85SkHxIQmVckw3Vmi69Debbq_mub1cq5Lr2d0CundRz1foxXXx8u7Cmw4ISoPIimsUwfoXswIjr8aW3vUIRiUQVH6wFZ78H5zO5hIlNM8oqNdPJ1Fj92lGSnBC0SDKwymioViIEwHg-eUb9MgLz4QW4U7zqceI"/>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-7 h-7 rounded-full bg-surface-bright text-on-surface flex items-center justify-center hover:bg-primary"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+</div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-sm hover:scale-105 transition-all">
+<img class="w-full h-full object-cover" data-alt="Stained glass art deco lampshade closeup with floral details in glowing warm amber" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5II57Pp7wFIe_J8gr3PleetRqZibCoCBJbraLx8ZCYwQ-7kGbEwGbPLmMW4yMkHbihASXAK6g_P536n6n94GsqxtPXXU4Lu6ZtGGxMePLjsBl8q-rNS78kQoga5IBjqLxeVa4lmGGqxDA07MWn_ugzYuq6WqVxYnqCp3n__hseYH9Vk2q1rgCyp-M-TCw7twg2BV0po9WPF_x3tdwwb_Cb4Usxhy_kZBbKd79eNY"/>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-7 h-7 rounded-full bg-surface-bright text-on-surface flex items-center justify-center hover:bg-primary"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+</div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer shadow-sm hover:scale-105 transition-all">
+<img class="w-full h-full object-cover" data-alt="Abstract mirrored spectrum showing glowing neon yellow and violet mask-like light shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHyRDuA1AEeYI7nBjP5LShNwUygsDwhSxD_KTn1GHPUHWHxuquur8q2WGwT0SC1yC8yLwPlKUp_KsG50TbaoGEKWPoOujpWMrlmPvvQlxW6pkMy3vyJb6qaUQ25OQEAC2voDa6h3hP38SMu4J0RhVaPt2X-FYgVw3c6PRSDjXIgSyBZHfZCRrxhfYuWNbwqYwYIzuQqtrffANXmduHuo2k0Qa5w0---4eQ-JCAgR0"/>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-7 h-7 rounded-full bg-surface-bright text-on-surface flex items-center justify-center hover:bg-primary"><span class="material-symbols-outlined text-[16px]">visibility</span></button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Persistent Floating Status Dock (Level 2 Elevation) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 ml-32 z-40">
+<div class="flex items-center gap-4 px-6 py-3 rounded-full bg-surface-container-low/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.55)] border-0">
+<!-- Media Counts -->
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">142 photos</span>
+</div>
+<span class="w-px h-4 bg-outline-variant/30"></span>
+<!-- Vault Metric -->
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-label-md text-label-md font-medium">44 private</span>
+</div>
+<span class="w-px h-4 bg-outline-variant/30"></span>
+<!-- Storage Ring Spark -->
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Storage: 14.8 GB of 100 GB</span>
+<div class="w-16 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[15%]"></div>
+</div>
+</div>
+<span class="w-px h-4 bg-outline-variant/30"></span>
+<!-- Quick Clean/Sync Action -->
+<button class="flex items-center gap-1 text-primary hover:text-primary-fixed-dim transition-colors font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Synced</span>
+</button>
+</div>
+</div>
+<!-- Vanilla Interaction Logic -->
+<script>
+    // Sort dropdown toggle
+    const sortBtn = document.getElementById('sortDropdownBtn');
+    const sortMenu = document.getElementById('sortMenu');
+    if (sortBtn && sortMenu) {
+      sortBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sortMenu.classList.toggle('hidden');
+      });
+      document.addEventListener('click', () => {
+        sortMenu.classList.add('hidden');
+      });
+    }
+
+    // Slideshow Modal Interactions
+    const openBtn = document.getElementById('open-slideshow');
+    const closeBtn = document.getElementById('close-slideshow');
+    const hud = document.getElementById('slideshow-hud');
+    const playBtn = document.getElementById('toggle-play-btn');
+
+    if (openBtn && hud) {
+      openBtn.addEventListener('click', () => {
+        hud.classList.remove('hidden');
+        hud.classList.add('flex');
+      });
+    }
+
+    if (closeBtn && hud) {
+      closeBtn.addEventListener('click', () => {
+        hud.classList.add('hidden');
+        hud.classList.remove('flex');
+      });
+    }
+
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        const icon = playBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.textContent = icon.textContent === 'pause' ? 'play_arrow' : 'pause';
+        }
+      });
+    }
+
+    // Interactive Drag and Drop Visual Cue
+    const banner = document.getElementById('dropzone-banner');
+    if (banner) {
+      ['dragenter', 'dragover'].forEach(eventName => {
+        banner.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          banner.classList.add('scale-[1.01]', 'bg-surface-container-high');
+        });
+      });
+      ['dragleave', 'drop'].forEach(eventName => {
+        banner.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          banner.classList.remove('scale-[1.01]', 'bg-surface-container-high');
+        });
+      });
+    }
+  </script>
+</div></main></div></body></html>

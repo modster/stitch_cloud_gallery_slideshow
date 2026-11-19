@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#00a572", "secondary-fixed-dim": "#4edea3", "on-primary-fixed-variant": "#004395", "surface": "#111317", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb95f", "on-secondary-fixed": "#002113", "on-surface": "#e2e2e8", "surface-container-low": "#1a1c20", "inverse-primary": "#005ac2", "on-secondary": "#003824", "secondary-fixed": "#6ffbbe", "error-container": "#93000a", "primary-fixed-dim": "#adc6ff", "on-primary": "#002e6a", "inverse-surface": "#e2e2e8", "tertiary-container": "#ca8100", "surface-container-lowest": "#0c0e12", "on-tertiary-fixed": "#2a1700", "surface-tint": "#adc6ff", "surface-container": "#1e2024", "on-tertiary-fixed-variant": "#653e00", "surface-container-highest": "#333539", "error": "#ffb4ab", "surface-container-high": "#282a2e", "surface-bright": "#37393e", "on-error": "#690005", "on-secondary-fixed-variant": "#005236", "tertiary-fixed": "#ffddb8", "primary-fixed": "#d8e2ff", "on-surface-variant": "#c2c6d6", "primary": "#adc6ff", "secondary": "#4edea3", "outline-variant": "#424754", "surface-dim": "#111317", "on-tertiary": "#472a00", "inverse-on-surface": "#2f3035", "outline": "#8c909f", "surface-variant": "#333539", "on-secondary-container": "#00311f", "background": "#111317", "on-tertiary-container": "#3e2400", "on-primary-container": "#00285d", "primary-container": "#4d8eff", "on-background": "#e2e2e8", "on-primary-fixed": "#001a42", "tertiary": "#ffb95f" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter-mobile": "0.5rem", "gutter": "1rem" }, "fontFamily": { "headline-xl": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "label-sm": [ "JetBrains Mono" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "label-md": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "headline-md": [ "20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between py-6 px-4 shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="flex flex-col gap-6"><div class="flex items-center gap-3 px-2"><img alt="Prism Photo Gallery Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBnP9ZJcCgGhJShUeJtVLWkSXDPCKegavzAD8-tIEeVCLaXZFtpgSCM15LgG6zXpYLhKmEyY92LjZv362tCf_mty0j2IcetIeC4NBrEhi0nVumUCJvqu-9HbOWBAA4DJvVfdgB3yEh3Za9-RTYOF_eCCwxyOiJUj1Ipu9-KNX2qEnhCEAasBUL52jB8r8c__ZiH4Cz6cZ9EyqIX1puEbDj80s450u4T5FBVkdU4CmGM"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Prism Photos</span></div><nav class="flex flex-col gap-1.5" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="all-photos" href="#"><span class="material-symbols-outlined text-[20px]">photo_library</span><span>All Photos</span></a><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors bg-surface-container-high text-primary font-bold" data-path="public-stream" href="#"><span class="material-symbols-outlined text-[20px]">public</span><span>Public Stream</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="favorites" href="#"><span class="material-symbols-outlined text-[20px]">favorite</span><span>Favorites</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="albums" href="#"><span class="material-symbols-outlined text-[20px]">collections_bookmark</span><span>Albums</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="vault" href="#"><span class="material-symbols-outlined text-[20px]">lock</span><span>Private Vault</span></a></nav></div><div class="flex flex-col gap-3 px-2"><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest"><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-outline">Storage Used</span><span class="font-label-md text-label-md text-on-surface">148.4 GB / 500 GB</span></div><span class="material-symbols-outlined text-secondary text-[20px]">cloud_done</span></div><div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-secondary rounded-full w-[30%]"></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="h-16 w-full px-8 flex items-center justify-between gap-6"><div class="flex-1 max-w-2xl relative flex items-center"><span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-11 pr-24 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm transition-all" placeholder="Search by location, tags, date... (e.g. Kyoto, #architecture, 2024)" type="text"/><div class="absolute right-2.5 flex items-center gap-1.5"><kbd class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-4"><div class="hidden xl:flex items-center p-1 rounded-lg bg-surface-container-low gap-1"><button class="p-1.5 rounded text-on-surface bg-surface-container hover:text-primary transition-colors flex items-center" title="Dense Grid View" type="button"><span class="material-symbols-outlined text-[18px]">grid_view</span></button><button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors flex items-center" title="Masonry View" type="button"><span class="material-symbols-outlined text-[18px]">auto_awesome_mosaic</span></button><button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors flex items-center" title="Editorial Canvas" type="button"><span class="material-symbols-outlined text-[18px]">view_day</span></button></div><button class="flex items-center gap-2 h-9 px-4 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary transition-all font-body-md text-body-md font-semibold" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Upload</span></button><div class="relative group flex items-center"><div class="flex items-center gap-3 p-1.5 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHy6XK-5I2k-d-y8yzyuE98QjR3kq8OBbme7p8rn-QBje6PyV_TSW01IHt1YFXbP3LlunakH2U8ql3n90qMusl5A644fIvvWXgdUA-ukxIcOsla4pFWLOjAEKRWoY86eFCMV8ipJbO91mTJtmiRMy8-puGulT6NnB5JagvuCOHN2c27hzBgq-BUfmCx1TXu5bVFRC-Xkby07tUdQBAwRdu_MNNXlRd71Xw80uF_ek"/><div class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></div></div><div class="hidden md:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-tight">Alex Rivera</span><span class="font-label-sm text-label-sm text-outline leading-tight">Visitor Mode Off</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div><div class="absolute right-0 top-full mt-2 w-72 p-3 rounded-xl bg-surface-container-high shadow-[0_20px_48px_rgba(0,0,0,0.6)] backdrop-blur-2xl hidden group-hover:flex flex-col gap-3 z-50"><div class="flex flex-col px-2 py-1"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Google Account Connected</span><span class="font-body-sm text-body-sm text-on-surface truncate">alex@creativestudio.io</span></div><div class="h-px bg-surface-variant w-full"></div><div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container"><div class="flex flex-col"><span class="font-body-sm text-body-sm font-medium text-on-surface">Visitor Mode</span><span class="font-label-sm text-label-sm text-outline">Hide private metadata</span></div><label class="relative inline-flex items-center cursor-pointer"><input class="sr-only peer" type="checkbox" value=""/><div class="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary-container"></div></label></div><div class="flex flex-col gap-1"><a class="flex items-center gap-2.5 px-2 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="account-settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Preferences</span></a><a class="flex items-center gap-2.5 px-2 py-1.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors font-body-sm text-body-sm" data-path="login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span>Sign Out</span></a></div></div></div></div></div></header><main class="w-full pt-16 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Public Notice Banner -->
+<section class="relative overflow-hidden bg-surface-container-low px-6 py-5 md:px-10 md:py-6 shadow-md">
+<div class="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-secondary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-20 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="relative max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-5">
+<div class="flex items-start md:items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">public</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="font-headline-md text-headline-md text-on-surface">Alex Rivera’s Public Stream</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              98 Curated Shots
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
+            You are browsing Alex’s public darkroom portfolio. Private vaults, RAW archives, and personal memories remain secured.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-3 self-start md:self-auto shrink-0">
+<button class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-on-surface text-surface font-body-md text-body-md font-semibold hover:bg-white transition-all transform active:scale-95 shadow-md" id="google-auth-btn">
+<svg class="w-4 h-4 shrink-0" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span>Continue with Google</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Filter & Display Control Ribbon -->
+<section class="sticky top-16 z-30 bg-surface-container-lowest/90 backdrop-blur-xl px-6 py-3.5 md:px-10 shadow-sm">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3 overflow-x-auto py-1">
+<!-- Private hidden indicator badge -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+<span>42 Private Photos Hidden</span>
+</div>
+<div class="h-4 w-px bg-outline-variant/30 hidden sm:block"></div>
+<!-- Sort Select Menu -->
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider hidden lg:inline">Sort:</span>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-body-sm pl-3 pr-8 py-1.5 rounded-lg focus:outline-none cursor-pointer transition-colors" id="sort-selector">
+<option value="newest">Chronological (Newest first)</option>
+<option value="oldest">Chronological (Oldest)</option>
+<option value="random">Random Order</option>
+<option value="location">Group by Location</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Filter Tags Pill Carousel -->
+<div class="flex items-center gap-1.5 pl-1">
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-medium">All (98)</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors">#NeonAbstract</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors">#Cinematic</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors">#TokyoNights</button>
+</div>
+</div>
+<div class="flex items-center gap-3 ml-auto">
+<!-- Start Slideshow Button -->
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm font-medium transition-all group shadow-sm" id="slideshow-trigger">
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:scale-110 transition-transform">play_circle</span>
+<span>Start Slideshow</span>
+</button>
+<div class="h-4 w-px bg-outline-variant/30"></div>
+<!-- Grid View Switchers -->
+<div class="flex items-center p-0.5 rounded-lg bg-surface-container-low">
+<button class="p-1.5 rounded text-primary bg-surface-container hover:text-primary transition-colors" id="view-masonry" title="Masonry Density">
+<span class="material-symbols-outlined text-[18px]">auto_awesome_mosaic</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors" id="view-grid" title="Compact Grid">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors" id="view-editorial" title="Editorial Perspective">
+<span class="material-symbols-outlined text-[18px]">view_day</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Curated Public Gallery Stream -->
+<main class="w-full max-w-7xl mx-auto px-6 md:px-10 py-8 flex flex-col gap-10">
+<!-- Group 1: Petrolia & Abstract Series -->
+<div class="flex flex-col gap-4">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md text-on-surface">Sun, Nov 1</span>
+<span class="font-body-md text-body-md text-outline">Petrolia, ON · Abstract Light Synthetics</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 Exposure Study</span>
+</div>
+<!-- Vivid Multi-column Abstract Rhythm inspired by input photo -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+<!-- Photo 1 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical fine art macro photograph of a mirror disco ball mounted on a cut-crystal glass pedestal, moody warm studio tungsten backlighting against a dark slate background, reflections and refraction highlights, sharp depth of field, 8k gallery photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-HTHS8kn46TVaJw726VvyTbBhVyQM1ohpCATss3WVFrEKmTRDSnQxyNEYxLVUJrqkgy1hZ3OaHeFMReCWC0HX3urzy4p9UysmO6B2-8yARlL0HQ3U-jDqJg-yMPRn_HNpUmLkxEaXnmIfNbLxIqysj-4adweZyxw-EYhN-xKp0BvvQBdbXxJFgHYhnBgVxbudJrd4hSo5BH98eq5IaP6AbXHvBBvARemYM1Qk1y4"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm">Public</span>
+<span class="material-symbols-outlined text-on-surface text-[18px]">visibility</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Prism Reflection I</span>
+<span class="font-label-sm text-label-sm text-outline">50mm · f/1.8 · ISO 100</span>
+</div>
+</div>
+</div>
+<!-- Photo 2 (Stacked Burst) -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical symmetrical kaleidoscope prism light refraction through faceted optical crystal glass, vibrant amber and electric violet caustic flares, high detail experimental physics photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFjZ9wyYe4Kd11jKqQHfDPhD4foG4iLt1gfpZkA1k2HxZgNEPDmApzpn7aa9vFKxF-9cIcCZUfKn4fOp_BZUk-o65uB4VB_wny8bKysyM9OQdBRGaqxZ9Ra2HbXNgKxT1zRa3WtZ9NfgJyp_4q2R-qEKrU1tgjfR0B91e-kV2dRx7v7o84CsTpSgES5qoaxodJbIBk1_Bs4rUvyBZnMUegQ1bhzR4Gv9fuQyw6B9M"/>
+</div>
+<div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span>2</span>
+<span class="material-symbols-outlined text-[13px]">filter_none</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Caustic Refraction 02</span>
+<span class="font-label-sm text-label-sm text-outline">Macro 105mm · f/2.8</span>
+</div>
+</div>
+</div>
+<!-- Photo 3 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical artistic shot of miniature disco globe illuminated by focused amber beam, golden hour glow, dark moody tones, specular highlights, darkroom aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPCiAFTzK3b-yZ4TgVmWOhL8DRYe0KJpy6KFMSHH5ncOSu8n-4JbkKN2m5Vx53tbB3vCt1T5eHxCr3mPB108kdhqxGUXROyyYuJLMPYKC5-Dn3AmLB3ZYu91hM31znVZMwCIxiEcYIZSzygcTi_2hjiMcws3SVnFFEDJdN0Iz6DEBsiYL7bQqzdg6QFAUcbMbqbtmnqC77Lhhs_x_SRRHpmos0wkjflHZWPb3oIHM"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Amber Beacon</span>
+<span class="font-label-sm text-label-sm text-outline">35mm · f/1.4 · 1/500s</span>
+</div>
+</div>
+</div>
+<!-- Photo 4 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist abstract vertical photograph with delicate pastel rose pink gradient wash, soft central glass pedestal reflection, dreamy haze and subtle grain texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdd5it0sg09KitiN7pRDPNU3L240sGWFuL9LQokRjTM4fB0TiIgSIZ54r4HSRDPoErEAc2tkdyh3-uUmQda3eIzne4ta8EVj7MpyQge_0edol3oBSBpXl37-9uFPgSKiE-2I3WBJwQduPD8MfSIM0-ctUvbAAjqVO3Ziw_gEKoZkR5tFC_ia_x7lUPIY_uucoP_fW5_q3Y7nM_pEiBOfjXxVSmGFoqPfNcYSAMUls"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Rose Fog Vignette</span>
+<span class="font-label-sm text-label-sm text-outline">85mm · f/2.0</span>
+</div>
+</div>
+</div>
+<!-- Photo 5 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical architectural futuristic lighting tunnel, pulsating magenta and cyan neon chevron patterns, symmetrical perspective lines, sleek dark synthwave gallery photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkxMf4JZr40OzBDIpBtSOW6U0Hbzp5AgrZSk-4rBKCOqs02_66_7nl0DV3nDGI-X5K8uQ4UQCYRvfL70CFP2kbc_ZqbdIrIGXlKApuP9FJfILvaFaNIkOOp8ZYmvnoveq-9PoKn5MhbVGwJXYYiTF4bM19CHBishOIHZr76cgz_6JZBCu4slhXzbpgOWbenrEH7pLwQuZC2XRGbZS5-A8Blu6wzGPLV9QvFpi2ej0"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Neon Sentry</span>
+<span class="font-label-sm text-label-sm text-outline">24mm · f/4.0 · ISO 400</span>
+</div>
+</div>
+</div>
+<!-- Photo 6 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dynamic kinetic long exposure motion blur of computer workbench with glowing monitors and complex tangled ethernet cables, cinematic light trails, deep blue and copper hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRDmasOI7afKTtWWr5V9YgV4dM7YtHknvu93N6frSnaCLmnbehaWF_eEdh9gcQDar80r2gHMg3E-iFFMsUJJru0awZCXse4DB3Ol-lhmBbuUFcIpEw16aieKiww1-bgIr2sctmi3ClwsHEsZQQmDvpyOPpimz8LZb19GAWIGYgLDHk5N_BgGEYuYJbci51ftI6a62BukLAfwp7sffOrq4eFenJraxe3haxvsKnOZo"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Data Stream Pulse</span>
+<span class="font-label-sm text-label-sm text-outline">18mm · f/8.0 · 2.5s</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Featured Bento Section -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md text-on-surface">Curator’s Highlights</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-2.5 py-0.5 rounded-full">Editorial Pick</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Archival Master Prints</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Major Large Hero Tile -->
+<div class="md:col-span-8 group relative rounded-2xl overflow-hidden bg-surface-container-low shadow-md min-h-[380px] flex flex-col justify-end p-6 cursor-pointer">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700" data-alt="High-resolution cinematic wide photograph of misty dawn over the jagged mountain peaks of Patagonia, intense cobalt blue and burnt amber morning sunlight piercing through low alpine clouds, fine grain, wide angle 24mm framing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-8nAp7qAk_oJEAN_KgbDwykfgdFItU0_3grsgUEDbe3Kj0nosSnWArwJexNVQb5PyA9GoqUjGvocsxC3WxyohYcCfj4U-BiYk54hzPWOGyOOT3NMn7j_6iTkg0ZpzrSrfvIHZnonfTG-KlVhXDDyGDvNbWyoU2XnYeSpo1rcfUQeiwJjEe3KtUSxUk4YWg1UM1i_9FyEIUPz1JxUCEsxsys4YSCfC3RC_dKYJaLg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+</div>
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold">Featured Public</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                Torres del Paine, Chile
+              </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-white">First Light on Granite Spires</h3>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md">
+<span>Hasselblad H6D-100c</span>
+<span>•</span>
+<span>HC 35mm f/3.5</span>
+<span>•</span>
+<span>1/60s · f/8 · ISO 64</span>
+</div>
+</div>
+</div>
+<!-- Right Vertical Pair -->
+<div class="md:col-span-4 flex flex-col gap-4">
+<!-- Card 1 -->
+<div class="flex-1 group relative rounded-2xl overflow-hidden bg-surface-container-low shadow-sm min-h-[180px] p-5 flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up architectural detail of brutalist geometric concrete facade in Tokyo, casting sharp afternoon diagonal shadows with deep blue sky reflection in glass panels, ultra crisp lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYX0jrPekzLauUKC08Sr5BDJnZfZcMXyHVn26KWmBla8AjZYj6D8n37xabKLNfe6PmVER6ZvMLZJq_ia2EMetJgUDV234fHCci2_ekMUaanQWr9nDA2Gq4ce_npb0SJ3ks8amrRKaJhmr-TwcETe_krThzMnvhvWhn9XX6WbJBANWZ_mP9bW1FXpUo-9ucIrT9JDU4etYu0-8nth3dlLqQMtSTUFnJ4XJK1F016l8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/30 to-transparent"></div>
+</div>
+<div class="relative z-10 flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Urban Monolith</span>
+<span class="font-headline-md text-headline-md text-white">Shibuya Concrete VI</span>
+<span class="font-label-sm text-label-sm text-outline mt-1">Sony A7R V · FE 24-70mm GM II</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-1 group relative rounded-2xl overflow-hidden bg-surface-container-low shadow-sm min-h-[180px] p-5 flex flex-col justify-end cursor-pointer">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Night photograph of wet rain-slicked asphalt streets reflecting crimson neon bar signs in Shinjuku alleyways, subtle vapor rising, atmospheric cinematic cyber noir style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAOvGjZ2N_vdWnDyP_UDEZF0vWWA5UQai5Gx4dk7LGPE4TUT91Xo75pHsmE7UVmduwX0GWljPooKx1BE5hP6orhmfiXeGHgT7vcTQn0N9aM7dY6J1q7zcyYXBhRI0iDlmGcKel6pHLTCJNz8GZ_8KIjCC-2Ke7DwSEiQobuaUd7zCIZ_RhFwmuLjHpcSG9HRkPpNvew1ifrIRQpA0QAFAyaGLWijWR_v13JLPKPTA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/30 to-transparent"></div>
+</div>
+<div class="relative z-10 flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Night Walk</span>
+<span class="font-headline-md text-headline-md text-white">Rain Reflections 03:14 AM</span>
+<span class="font-label-sm text-label-sm text-outline mt-1">Leica M11 · Summilux-M 35mm</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Group 2: Kinetic & Circuit Experimental Work -->
+<div class="flex flex-col gap-4">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md text-on-surface">Wed, Oct 28</span>
+<span class="font-body-md text-body-md text-outline">Laboratory · Kinetic Optical Electronics</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">6 Public Photographs</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+<!-- Item 1 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical close up abstract macro shot of breadboard with multi-colored insulated copper jumper wires crossing in chaos, electric blue, red, and yellow, selective focus, laboratory illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoBx_mAlJAsUgRsXKiyMznTLelA9NSJ6RbwrSY_RNOKamYakCwnTj6KN2az424gWegnROU0BVWqNPwuuYr-n4FKsYNcz0DhjThrE-tSlT1Au-tLQGPYUT6YlFx5osAzqIVhHSb0_HAQ2W0FpdRJDHk39bDa7S5uX8mNTcNzT2ufadz6oigNVG1U7Msij_dhhGKjAs2fk1rTumILd2_UFMgSUlNydBCDl4laOe5WYM"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Neural Array</span>
+<span class="font-label-sm text-label-sm text-outline">Macro 90mm · f/2.8</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical mirror reflection of vintage Tiffany stained glass floral desk lamp shade glowing with amber and emerald light patterns on workbench, moody interior shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIgPo4yBV1_joyclsEnKQltL-V_WQOPik56R4cPQ8Hs04BJeJnOy_OcIx2VQOnf3NnkFuEkpHArHpIBEJ8PHvAXKCn89cny0fKyZ6mQ-E7OOPgyI-G0kf89cBIoEshhEaPdh0u1_j0XiKscnPXD__cxBPPOQk_vu906DJTUjan5Sr6i27rgceiws45iY9fCq-2EdKac2Nl6m2xSQCaRG_afmh_dOtoMMfqWY1e1I4"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Art Nouveau Filament</span>
+<span class="font-label-sm text-label-sm text-outline">50mm · f/1.4</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical symmetrical digital light prism with saturated magenta, deep cobalt, and lavender spectral banding, psychedelic clean geometry, dark studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1n5KTcWNDLnvqhgk-JMXb9SW4wOGzW50pNWGqu9Mg5wb1isyPsIeHCdAUM988bHHvOj7GxbxrvzHCk6KuEPTehyn3WuA55bz0P5L9_MhxTZNwCdMVp-YYcS44GTWlAeXmWrP6iqpS1nBwKSRJXhhs9PzdSfl3kDwCAyzc6gcd0aEZXc_yKFfSMnOL5MliS5SbgoJ3WkOVCDC444CQgdA1P7AiyVnC-UVGssFSMTo"/>
+</div>
+<div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span>4</span>
+<span class="material-symbols-outlined text-[13px]">filter_none</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Spectral Monad</span>
+<span class="font-label-sm text-label-sm text-outline">100mm · f/4.0</span>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical high-speed rotation motion blur of electronic machinery and dials, soft circular streaks in turquoise and charcoal, creative physics photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyWAROA3bjL2PcdWB-gp1c_fZ0NMxUSEy3wEPeYq5_0-J4k7j6dcJfIuDe8YxqlbNpUJcO15leomMop5ajWqQBeV9leuh8IUa-ZrW6iP96YDoI9PpqS668Pd_1-qpgKKvyOamw86HmTNWxblANBWphjgCixyae-GBBKdnBWeTjmtOaucopiN6N2Yrig4cjJ7BezWkBJNI29Bj8tltWEHZOKVSh7xivgNHL6VcR0D0"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Vortex Dynamism</span>
+<span class="font-label-sm text-label-sm text-outline">28mm · f/5.6 · 1/4s</span>
+</div>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[9/16] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vertical symmetrical kaleidoscope mirror sculpture of yellow glass insect wings pattern against white glowing ambient light, delicate vector-like contours." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGnD-KttypthDbAI7ZvxiCmQl8S7IbvOYzbKq-Qf7s_-MpQfdeX_vhI_ERHyP7NNwQfRjUBsVJyM3XNMGA2Hxp32XfVEx67PqUueNoJlTMc1MmiIgYjDIdvJll4H8lhdw2oK37QPBtVivAEH1bbNBq3AmnpDLqPh4S3VaVfKHMgmG6Pmm3esJVlgZ0LUmz8Z_kH8MdeCmvAJpf-fDsCe3-XyeB6vhGWOAqqF-BkKI"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/30 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm self-start">Public</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Amber Chrysalis</span>
+<span class="font-label-sm text-label-sm text-outline">70mm · f/3.2 · ISO 200</span>
+</div>
+</div>
+</div>
+<!-- Item 6 (Prompt to Unlock Private Vault) -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-high flex flex-col items-center justify-center p-4 text-center cursor-pointer shadow-sm hover:bg-surface-bright transition-all" id="unlock-card">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-[24px]">lock_open</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">42 Vault Items</span>
+<p class="font-body-sm text-body-sm text-outline mt-1 mb-4">RAW captures, unedited negatives &amp; locked series.</p>
+<span class="font-label-sm text-label-sm text-primary group-hover:underline">Sign In with Google →</span>
+</div>
+</div>
+</div>
+<!-- Infinite Scroll / End of Public Feed Indicator -->
+<div class="py-8 flex flex-col items-center justify-center gap-3">
+<div class="w-12 h-1 rounded-full bg-surface-container-high"></div>
+<p class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Reached end of public stream (98 photos)</p>
+</div>
+</main>
+<!-- Persistent Floating Visitor Auth Bar -->
+<aside class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-11/12 max-w-2xl px-5 py-3.5 rounded-2xl bg-surface-container-high/90 backdrop-blur-2xl shadow-[0_20px_48px_rgba(0,0,0,0.6)] flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">cloud_upload</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Join Alex’s Prism Workspace</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Sign in with Google to create your own galleries and unlock vaults.</span>
+</div>
+</div>
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary-fixed-dim transition-all shrink-0" id="floating-google-login">
+<svg class="w-3.5 h-3.5" viewbox="0 0 24 24">
+<path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.761H12.545z" fill="currentColor"></path>
+</svg>
+<span>Sign In</span>
+</button>
+</aside>
+<!-- Visitor Google Sign-in Interactive Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md hidden items-center justify-center p-4" id="auth-modal">
+<div class="relative w-full max-w-md rounded-2xl bg-surface-container-high p-8 shadow-2xl flex flex-col gap-6">
+<button class="absolute top-4 right-4 p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="close-modal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="flex flex-col items-center text-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-primary text-[32px]">photo_library</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Welcome to Prism Photos</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sign in to request full access to Alex Rivera’s private archives or upload your own visual work.</p>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-xl bg-white text-surface-container-lowest font-body-md text-body-md font-semibold hover:bg-gray-100 transition-colors shadow-sm">
+<svg class="w-5 h-5 shrink-0" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span>Continue with Google</span>
+</button>
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-bright transition-colors">
+          Browse as Guest (Public Only)
+        </button>
+</div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-2">
+<span>Protected by WebAuthn</span>
+<span>Prism Studio v2.4</span>
+</div>
+</div>
+</div>
+<!-- Slideshow Fullscreen Overlay Modal -->
+<div class="fixed inset-0 z-50 bg-[#0F1115]/95 backdrop-blur-2xl hidden flex-col justify-between p-6 md:p-10" id="slideshow-modal">
+<div class="flex items-center justify-between w-full max-w-6xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm">Public Slideshow</span>
+<span class="font-label-sm text-label-sm text-outline">Press ESC to exit</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>00:03 / 00:05</span>
+</div>
+<button class="p-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface transition-colors" id="close-slideshow">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Active Slideshow Display -->
+<div class="relative w-full max-w-5xl mx-auto flex items-center justify-center flex-1 my-4">
+<button class="absolute left-0 p-3 rounded-full bg-surface-container-high/60 hover:bg-surface-bright text-on-surface transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<div class="max-h-[768px] max-w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col items-center">
+<img class="max-h-[665px] w-auto object-contain rounded-xl" data-alt="Breathtaking wide view of the illuminated Tokyo metropolitan skyline at night from Shibuya Sky, soft neon glow, long exposure light trails on highway interchanges, dark cyan and amber tone grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRD042l7pDWJ8ixcM_ItDp15ZViLH-3xIjdY7DJqCgq5TzLyNvD1owDnEYfR4moQEK8zrWuk9bojAzq0RRKSBYLRXypN4Hky6g1q4PTEJu8kk5Or6l-0-6tKaQORewgYRLO2Cwn8T3RTxyNHramJx-d8UsiOOcMJFKMPDI9KpsK__9Xei8Z0rVYucZu6SFTzLam2VC0RUFbL5j96ptX9PCC8D_1711CqgKd0GFb3A"/>
+<div class="mt-4 text-center">
+<h4 class="font-headline-md text-headline-md text-white">Metropolitan Nocturne · 2024</h4>
+<p class="font-label-md text-label-md text-outline">Tokyo, Japan · Alex Rivera Archive · Sony A7R V</p>
+</div>
+</div>
+<button class="absolute right-0 p-3 rounded-full bg-surface-container-high/60 hover:bg-surface-bright text-on-surface transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-[24px]">chevron_right</span>
+</button>
+</div>
+<div class="w-full max-w-6xl mx-auto flex items-center justify-center gap-3">
+<div class="h-1 flex-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/5 transition-all duration-300"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Photo 4 of 98</span>
+</div>
+</div>
+<script>
+    // Modal toggle interactions
+    const authModal = document.getElementById('auth-modal');
+    const googleAuthBtn = document.getElementById('google-auth-btn');
+    const floatingLoginBtn = document.getElementById('floating-google-login');
+    const closeModalBtn = document.getElementById('close-modal');
+    const unlockCard = document.getElementById('unlock-card');
+
+    function openAuthModal() {
+      authModal.classList.remove('hidden');
+      authModal.classList.add('flex');
+    }
+
+    function closeAuthModal() {
+      authModal.classList.add('hidden');
+      authModal.classList.remove('flex');
+    }
+
+    if (googleAuthBtn) googleAuthBtn.addEventListener('click', openAuthModal);
+    if (floatingLoginBtn) floatingLoginBtn.addEventListener('click', openAuthModal);
+    if (unlockCard) unlockCard.addEventListener('click', openAuthModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeAuthModal);
+
+    // Slideshow toggle
+    const slideshowModal = document.getElementById('slideshow-modal');
+    const slideshowTrigger = document.getElementById('slideshow-trigger');
+    const closeSlideshow = document.getElementById('close-slideshow');
+
+    if (slideshowTrigger) {
+      slideshowTrigger.addEventListener('click', () => {
+        slideshowModal.classList.remove('hidden');
+        slideshowModal.classList.add('flex');
+      });
+    }
+
+    if (closeSlideshow) {
+      closeSlideshow.addEventListener('click', () => {
+        slideshowModal.classList.add('hidden');
+        slideshowModal.classList.remove('flex');
+      });
+    }
+
+    // Close on escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAuthModal();
+        if (slideshowModal) {
+          slideshowModal.classList.add('hidden');
+          slideshowModal.classList.remove('flex');
+        }
+      }
+    });
+  </script>
+</div></main></div></body></html>

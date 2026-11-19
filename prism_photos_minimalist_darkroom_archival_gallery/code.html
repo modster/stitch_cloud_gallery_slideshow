@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prism Photos - Minimalist Darkroom & Archival Gallery</title>
+  
+  <!-- Font and Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-container": "#00a572",
+            "secondary-fixed-dim": "#4edea3",
+            "on-primary-fixed-variant": "#004395",
+            "surface": "#111317",
+            "on-error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-secondary-fixed": "#002113",
+            "on-surface": "#e2e2e8",
+            "surface-container-low": "#1a1c20",
+            "inverse-primary": "#005ac2",
+            "on-secondary": "#003824",
+            "secondary-fixed": "#6ffbbe",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#adc6ff",
+            "on-primary": "#002e6a",
+            "inverse-surface": "#e2e2e8",
+            "tertiary-container": "#ca8100",
+            "surface-container-lowest": "#0c0e12",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-tint": "#adc6ff",
+            "surface-container": "#1e2024",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-container-highest": "#333539",
+            "error": "#ffb4ab",
+            "surface-container-high": "#282a2e",
+            "surface-bright": "#37393e",
+            "on-error": "#690005",
+            "on-secondary-fixed-variant": "#005236",
+            "tertiary-fixed": "#ffddb8",
+            "primary-fixed": "#d8e2ff",
+            "on-surface-variant": "#c2c6d6",
+            "primary": "#3b82f6",
+            "secondary": "#4edea3",
+            "outline-variant": "#424754",
+            "surface-dim": "#111317",
+            "on-tertiary": "#472a00",
+            "inverse-on-surface": "#2f3035",
+            "outline": "#8c909f",
+            "surface-variant": "#333539",
+            "on-secondary-container": "#00311f",
+            "background": "#111317",
+            "on-tertiary-container": "#3e2400",
+            "on-primary-container": "#00285d",
+            "primary-container": "#4d8eff",
+            "on-background": "#e2e2e8",
+            "on-primary-fixed": "#001a42",
+            "tertiary": "#ffb95f"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #0c0e12;
+        color: #e2e2e8;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
+  <!-- React & Router Global CDNs -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/history@5/umd/history.development.js"></script>
+  <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
+  <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-sans antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const { useState, useEffect } = React;
+  const { createRoot } = ReactDOM;
+  const { MemoryRouter, Routes, Route, Link, useNavigate, useLocation } = ReactRouterDOM;
+
+  // Mock Common Shared Photo Dataset
+  const samplePhotos = [
+    {
+      id: "p1",
+      title: "Autumn Drive along Maple Ave",
+      date: "Nov 1, 2026",
+      location: "Petrolia, ON",
+      camera: "Sony A7 IV · 35mm · f/4 · 1/500s · ISO 100",
+      specs: "35mm · f/4.0 · 1/500s · ISO 100",
+      isPublic: true,
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBamQtK_I2kDjgM2nohmkVHcvLf2rJCQO24VlLHGp3MAMcp5TkIRlvqu-sI7B3FWr6ZhF12UZcMHddXvt4B4QhzTTs6UvNC9UJKYP6hwlA-ulx9sSEbpbT86Ye-v8xe2VMlt-5hswyVvQaVWmqqc-7QxU4pFlnQf-WVXlEU0-Xo5P13QdcJPfYAjGhNaziTOGvlZvh85lVxWGagqf6klxJfuYAnR-F6wmQWmlwsnaI1grAgcC1BzrMm",
+      alt: "Autumn road with golden canopy",
+      category: "Road & Autumn",
+      burst: null
+    },
+    {
+      id: "p2",
+      title: "Prism Mirror Refraction I",
+      date: "Nov 1, 2026",
+      location: "Petrolia Studio Lab",
+      camera: "Sony A7R V · 50mm · f/1.8 · ISO 100",
+      specs: "50mm · f/1.8 · ISO 100",
+      isPublic: true,
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-HTHS8kn46TVaJw726VvyTbBhVyQM1ohpCATss3WVFrEKmTRDSnQxyNEYxLVUJrqkgy1hZ3OaHeFMReCWC0HX3urzy4p9UysmO6B2-8yARlL0HQ3U-jDqJg-yMPRn_HNpUmLkxEaXnmIfNbLxIqysj-4adweZyxw-EYhN-xKp0BvvQBdbXxJFgHYhnBgVxbudJrd4hSo5BH98eq5IaP6AbXHvBBvARemYM1Qk1y4",
+      alt: "Disco ball reflection on glass pedestal",
+      category: "Prism & Optics",
+      burst: 1
+    },
+    {
+      id: "p3",
+      title: "Caustic Refraction 02",
+      date: "Nov 1, 2026",
+      location: "Petrolia Studio Lab",
+      camera: "Macro 105mm · f/2.8 · ISO 200",
+      specs: "Macro 105mm · f/2.8",
+      isPublic: true,
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuCFjZ9wyYe4Kd11jKqQHfDPhD4foG4iLt1gfpZkA1k2HxZgNEPDmApzpn7aa9vFKxF-9cIcCZUfKn4fOp_BZUk-o65uB4VB_wny8bKysyM9OQdBRGaqxZ9Ra2HbXNgKxT1zRa3WtZ9NfgJyp_4q2R-qEKrU1tgjfR0B91e-kV2dRx7v7o84CsTpSgES5qoaxodJbIBk1_Bs4rUvyBZnMUegQ1bhzR4Gv9fuQyw6B9M",
+      alt: "Symmetrical prism light refraction",
+      category: "Prism & Optics",
+      burst: 2
+    },
+    {
+      id: "p4",
+      title: "Raw Optical Studies (Vault)",
+      date: "Nov 1, 2026",
+      location: "Darkroom Studio",
+      camera: "Sony A7 IV · 90mm · f/2.8",
+      specs: "90mm · f/2.8 · ISO 640",
+      isPublic: false,
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuCDijXQhFihwn6D3xArhWA-ofCY_uSJlOUDBSsPxhAc1RuD-j5xrAUuRe6pfNTDN3RrA25IJYsJJPIT5Xn9KfPKaAGWRlq2gem3td8SkhJSnI-bzeowzp1FqwUdOr-oY-B_jrlvKchY9lEOfH5EmeBhROrG8N7xFH-nFsFjgz4pDEdOswHVp_mWfZoNNNfDA1M4RvqSxxYi3H52RM45nKTU1A1s9QpZBL25XlNjc54",
+      alt: "Film negative contact sheet study",
+      category: "Private Vault",
+      burst: null
+    },
+    {
+      id: "p5",
+      title: "Financial District Monolith",
+      date: "Oct 31, 2026",
+      location: "Toronto, ON",
+      camera: "Sony A7R V · FE 24-70mm GM II · f/8",
+      specs: "35mm · f/1.4 · 1/120s · ISO 800",
+      isPublic: true,
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBhBTm6yFqXnPqqICXl5QvR8angyj1SEjAp7996sNF1_IRGTGpL2VyzWXBwokPTHyplOxcTXHfT1PbwIPLLpVkLUGsedPDLdxpoCXGPe7pvhT1RJR2WrKwnglv_TgJuRu4E4Q4Hpv3y-G-BDeOJRV_EZ5uEKHNIoNZ0qoPnOld9ZF_9wirq_z9GAX59Iw2s2DR4PzOpg506ZCc-r38u42GpQG7gGW3GQs07Tw6n5Gw",
+      alt: "Misty nighttime skyscrapers",
+      category: "Architectural Monoliths",
+      burst: null
+    },
+    {
+      id: "p6",
+      title: "First Light on Granite Spires",
+      date: "Oct 25, 2026",
+      location: "Torres del Paine, Chile",
+      camera: "Hasselblad H6D-100c · HC 35mm f/3.5",
+      specs: "1/60s · f/8 · ISO 64 · 100MP RAW",
+      isPublic: true,
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuD-8nAp7qAk_oJEAN_KgbDwykfgdFItU0_3grsgUEDbe3Kj0nosSnWArwJexNVQb5PyA9GoqUjGvocsxC3WxyohYcCfj4U-BiYk54hzPWOGyOOT3NMn7j_6iTkg0ZpzrSrfvIHZnonfTG-KlVhXDDyGDvNbWyoU2XnYeSpo1rcfUQeiwJjEe3KtUSxUk4YWg1UM1i_9FyEIUPz1JxUCEsxsys4YSCfC3RC_dKYJaLg",
+      alt: "Alpine dawn mountain light",
+      category: "Curator Masterpieces",
+      burst: null
+    },
+    {
+      id: "p7",
+      title: "Shinjuku Nocturne Inversion",
+      date: "Oct 18, 2026",
+      location: "Shinjuku, Tokyo",
+      camera: "Leica M11 · Summilux-M 35mm",
+      specs: "28mm · f/2.0 · 1/160s · ISO 1600",
+      isPublic: true,
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBtdANfaQCE7wbme5mrjhUprS7hR5OU8SE-fnv-bv2v7VK0GvV06mQ1obJYUMfuWU6kuR3T1iFtXdIvZgOmyCPJwZxrJSB--0zLkzRtxZBin02X8L95gxUJTalfizwurWirWbPoc_7_VlyWcwUuNP7H50mCdZHku_RFPHMCSHf6WcX88057Vzh4YLWaMYg5D_l4SK5fkZudcQUnSYBOXRPDzAtapQKe-lO2zNXXfa0",
+      alt: "Rainy Tokyo alley neon reflection",
+      category: "Night Reflections",
+      burst: null
+    },
+    {
+      id: "p8",
+      title: "Helical Void in Concrete",
+      date: "Oct 12, 2026",
+      location: "Kyoto, Japan",
+      camera: "Leica M11 Monochrom · 28mm",
+      specs: "28mm · f/5.6 · 1/200s",
+      isPublic: true,
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuDc3KTvrYOJZf5BLYUnu3z3kih7K8YJcnxG1wK-Gt5g0JCfxXiAJMzklw0rznaEBvxd4tgqiq6j6JeRqIZjqTjz3-pbBVMiUiAV6_1qMqxwXd5lA2N6q9hdNXDJx-6Ce-NL3YVMdw6THi8ze4jVjHmMqHB2s5ijoy9Y7ol6loKYZZCBpMrUYj87-l5oBIBCVPG8zy0ahkmrNJWGCOo8OL6vNpxFokigkq1qQp45AqI",
+      alt: "Spiral architectural stairs",
+      category: "Architectural Monoliths",
+      burst: null
+    }
+  ];
+
+  // Global Sidebar Navigation Component
+  function Sidebar() {
+    const location = useLocation();
+    const currentPath = location.pathname;
+
+    const navItems = [
+      { name: "All Photos", path: "/", icon: "photo_library" },
+      { name: "Public Stream", path: "/public-stream", icon: "public" },
+      { name: "Compact Feed", path: "/compact-feed", icon: "apps" },
+      { name: "Curator Showcase", path: "/curator-showcase", icon: "auto_awesome_mosaic" },
+      { name: "Private Vault", path: "/vault", icon: "lock" },
+      { name: "Profile & Settings", path: "/profile-settings", icon: "settings" },
+    ];
+
+    return (
+      <aside className="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between py-6 px-4 shadow-[0_1px_8px_rgba(0,0,0,0.2)] hidden lg:flex border-r border-surface-container/60">
+        <div className="flex flex-col gap-6">
+          <Link to="/" className="flex items-center gap-3 px-2">
+            <div className="w-8 h-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center font-bold">
+              <span className="material-symbols-outlined text-[22px]">filter_vintage</span>
+            </div>
+            <span className="text-[20px] font-bold tracking-tight text-on-surface">Prism Photos</span>
+          </Link>
+
+          <nav className="flex flex-col gap-1.5">
+            {navItems.map((item) => {
+              const isActive = currentPath === item.path;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors text-sm ${
+                    isActive
+                      ? "bg-surface-container-high text-primary font-bold shadow-sm"
+                      : "text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+
+        <div className="flex flex-col gap-3 px-2">
+          <div className="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest">
+            <div className="flex flex-col">
+              <span className="text-[10px] uppercase font-mono tracking-wider text-outline">Storage Used</span>
+              <span className="text-xs font-mono text-on-surface">148.4 GB / 500 GB</span>
+            </div>
+            <span className="material-symbols-outlined text-secondary text-[20px]">cloud_done</span>
+          </div>
+          <div className="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+            <div className="h-full bg-secondary rounded-full w-[30%]"></div>
+          </div>
+        </div>
+      </aside>
+    );
+  }
+
+  // Top Header Component
+  function Header({ onOpenAuth, onStartSlideshow }) {
+    const [visitorMode, setVisitorMode] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const navigate = useNavigate();
+
+    return (
+      <header className="fixed top-0 left-0 lg:left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 border-b border-surface-container/60 shadow-[0_1px_8px_rgba(0,0,0,0.2)]">
+        <div className="h-16 w-full px-4 lg:px-8 flex items-center justify-between gap-4">
+          <div className="flex-1 max-w-xl relative flex items-center">
+            <span className="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px]">search</span>
+            <input
+              className="w-full h-10 pl-11 pr-16 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
+              placeholder="Search by location, tags, date... (e.g. Kyoto, #architecture)"
+              type="text"
+            />
+            <div className="absolute right-2.5 flex items-center gap-1.5">
+              <kbd className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">⌘K</kbd>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => onStartSlideshow && onStartSlideshow()}
+              className="hidden sm:flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface text-sm transition-colors"
+              title="Launch Slideshow"
+            >
+              <span className="material-symbols-outlined text-secondary text-[18px]">play_circle</span>
+              <span>Slideshow</span>
+            </button>
+
+            <button
+              onClick={() => navigate("/photo/p1")}
+              className="hidden md:flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary text-sm font-semibold transition-all"
+            >
+              <span className="material-symbols-outlined text-[18px]">photo_camera</span>
+              <span>Inspect Latest</span>
+            </button>
+
+            {/* Profile Dropdown */}
+            <div className="relative">
+              <div
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors"
+              >
+                <div className="relative">
+                  <img
+                    alt="Alex Rivera Profile"
+                    className="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-highest"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHy6XK-5I2k-d-y8yzyuE98QjR3kq8OBbme7p8rn-QBje6PyV_TSW01IHt1YFXbP3LlunakH2U8ql3n90qMusl5A644fIvvWXgdUA-ukxIcOsla4pFWLOjAEKRWoY86eFCMV8ipJbO91mTJtmiRMy8-puGulT6NnB5JagvuCOHN2c27hzBgq-BUfmCx1TXu5bVFRC-Xkby07tUdQBAwRdu_MNNXlRd71Xw80uF_ek"
+                  />
+                  <div className={`absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full ring-2 ring-surface-container-lowest ${visitorMode ? 'bg-tertiary' : 'bg-secondary'}`}></div>
+                </div>
+                <div className="hidden sm:flex flex-col text-left">
+                  <span className="text-xs font-semibold text-on-surface leading-tight">Alex Rivera</span>
+                  <span className="text-[10px] text-outline font-mono leading-tight">{visitorMode ? "Visitor Mode On" : "Archivist Master"}</span>
+                </div>
+                <span className="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span>
+              </div>
+
+              {dropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-72 p-3 rounded-xl bg-surface-container-high shadow-2xl border border-surface-container/80 backdrop-blur-2xl flex flex-col gap-3 z-50">
+                  <div className="flex flex-col px-2 py-1">
+                    <span className="text-[10px] font-mono text-secondary uppercase tracking-wider font-semibold">Google Account Connected</span>
+                    <span className="text-xs text-on-surface truncate">alex@creativestudio.io</span>
+                  </div>
+                  <div className="h-px bg-surface-variant w-full"></div>
+                  
+                  <div className="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container">
+                    <div className="flex flex-col">
+                      <span className="text-xs font-medium text-on-surface">Visitor Mode</span>
+                      <span className="text-[10px] text-outline">Mask private metadata</span>
+                    </div>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={visitorMode}
+                        onChange={() => setVisitorMode(!visitorMode)}
+                        className="sr-only peer"
+                      />
+                      <div className="w-9 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary-container"></div>
+                    </label>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <Link
+                      to="/profile-settings"
+                      onClick={() => setDropdownOpen(false)}
+                      className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface text-xs transition-colors"
+                    >
+                      <span className="material-symbols-outlined text-[18px]">settings</span>
+                      <span>Preferences & Security</span>
+                    </Link>
+                    <button
+                      onClick={() => { setDropdownOpen(false); onOpenAuth && onOpenAuth(); }}
+                      className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface text-xs transition-colors"
+                    >
+                      <span className="material-symbols-outlined text-[18px]">login</span>
+                      <span>Switch Account</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
+
+  // Mobile Bottom Navigation Bar
+  function MobileNav() {
+    const location = useLocation();
+    const currentPath = location.pathname;
+
+    const navItems = [
+      { name: "Stream", path: "/", icon: "grid_view" },
+      { name: "Public", path: "/public-stream", icon: "public" },
+      { name: "Compact", path: "/compact-feed", icon: "apps" },
+      { name: "Curator", path: "/curator-showcase", icon: "collections_bookmark" },
+      { name: "Profile", path: "/profile-settings", icon: "account_circle" },
+    ];
+
+    return (
+      <nav className="fixed bottom-0 inset-x-0 z-50 lg:hidden bg-surface-container-low/90 backdrop-blur-xl border-t border-surface-container shadow-2xl">
+        <div className="flex justify-around items-center h-14">
+          {navItems.map((item) => {
+            const isActive = currentPath === item.path;
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`flex flex-col items-center justify-center gap-0.5 min-w-[56px] ${
+                  isActive ? "text-primary font-semibold" : "text-on-surface-variant"
+                }`}
+              >
+                <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
+                <span className="text-[10px] tracking-wide">{item.name}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+    );
+  }
+
+  // Interactive Fullscreen Slideshow Component
+  function SlideshowModal({ isOpen, onClose }) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [speed, setSpeed] = useState(5);
+
+    useEffect(() => {
+      let timer = null;
+      if (isOpen && isPlaying) {
+        timer = setInterval(() => {
+          setCurrentIndex((prev) => (prev + 1) % samplePhotos.length);
+        }, speed * 1000);
+      }
+      return () => clearInterval(timer);
+    }, [isOpen, isPlaying, speed]);
+
+    if (!isOpen) return null;
+    const current = samplePhotos[currentIndex];
+
+    return (
+      <div className="fixed inset-0 z-50 bg-[#07080a]/95 backdrop-blur-2xl flex flex-col justify-between p-4 sm:p-8 transition-opacity select-none">
+        {/* Top HUD */}
+        <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
+          <div className="flex items-center gap-3">
+            <span className="px-2.5 py-1 rounded-full bg-secondary/15 text-secondary text-xs font-mono">
+              Prism Theater · 4K Canvas
+            </span>
+            <span className="text-xs font-mono text-outline">
+              {currentIndex + 1} / {samplePhotos.length}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3 bg-surface-container-high/80 px-4 py-1.5 rounded-full backdrop-blur-md">
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="text-primary hover:text-on-primary-container transition-colors flex items-center"
+            >
+              <span className="material-symbols-outlined text-[22px]">
+                {isPlaying ? "pause" : "play_arrow"}
+              </span>
+            </button>
+            <div className="h-3.5 w-px bg-outline-variant/40"></div>
+            <div className="flex items-center gap-1.5 text-xs font-mono">
+              {[3, 5, 10].map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setSpeed(s)}
+                  className={`px-2 py-0.5 rounded-full ${speed === s ? "bg-primary text-on-primary" : "text-on-surface-variant hover:text-on-surface"}`}
+                >
+                  {s}s
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={onClose}
+            className="p-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface"
+          >
+            <span className="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+
+        {/* Center Frame */}
+        <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center flex-1 my-4">
+          <button
+            onClick={() => setCurrentIndex((prev) => (prev - 1 + samplePhotos.length) % samplePhotos.length)}
+            className="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/60 backdrop-blur text-on-surface flex items-center justify-center hover:bg-surface-bright transition-all"
+          >
+            <span className="material-symbols-outlined text-[24px]">chevron_left</span>
+          </button>
+
+          <div className="max-h-[768px] max-w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col items-center">
+            <img
+              src={current.url}
+              alt={current.title}
+              className="max-h-[665px] w-auto object-contain rounded-xl shadow-2xl"
+            />
+            <div className="mt-4 text-center">
+              <h3 className="text-xl font-bold text-white tracking-tight">{current.title}</h3>
+              <p className="text-xs font-mono text-outline mt-1">{current.location} · {current.camera}</p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => setCurrentIndex((prev) => (prev + 1) % samplePhotos.length)}
+            className="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/60 backdrop-blur text-on-surface flex items-center justify-center hover:bg-surface-bright transition-all"
+          >
+            <span className="material-symbols-outlined text-[24px]">chevron_right</span>
+          </button>
+        </div>
+
+        {/* Filmstrip queue */}
+        <div className="w-full max-w-4xl mx-auto flex items-center justify-center gap-2 overflow-x-auto py-2">
+          {samplePhotos.map((p, idx) => (
+            <button
+              key={p.id}
+              onClick={() => setCurrentIndex(idx)}
+              className={`w-14 h-10 rounded-md overflow-hidden shrink-0 border-2 transition-all ${
+                currentIndex === idx ? "border-primary scale-105 opacity-100" : "border-transparent opacity-40 hover:opacity-80"
+              }`}
+            >
+              <img src={p.url} alt={p.title} className="w-full h-full object-cover" />
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Google SSO & Authentication Modal
+  function AuthModal({ isOpen, onClose }) {
+    if (!isOpen) return null;
+    return (
+      <div className="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div className="relative w-full max-w-md rounded-2xl bg-surface-container-high p-8 shadow-2xl border border-surface-container/80 flex flex-col gap-6">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors"
+          >
+            <span className="material-symbols-outlined text-[20px]">close</span>
+          </button>
+          <div className="flex flex-col items-center text-center gap-2">
+            <div className="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center mb-1 text-primary">
+              <span className="material-symbols-outlined text-[32px]">photo_library</span>
+            </div>
+            <h2 className="text-xl font-bold text-on-surface">Welcome to Prism Photos</h2>
+            <p className="text-xs text-on-surface-variant">Sign in with your verified account to access private darkroom vaults, full-resolution RAW archives, and uncompressed exports.</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={onClose}
+              className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-xl bg-white text-surface-container-lowest text-sm font-semibold hover:bg-gray-100 transition-colors shadow-sm"
+            >
+              <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+              </svg>
+              <span>Continue with Google</span>
+            </button>
+            <button
+              onClick={onClose}
+              className="w-full py-2.5 px-4 rounded-xl bg-surface-container text-on-surface text-xs hover:bg-surface-bright transition-colors"
+            >
+              Browse as Guest (Public Mode)
+            </button>
+          </div>
+          <div className="flex items-center justify-between text-outline text-[10px] font-mono pt-2 border-t border-surface-container">
+            <span>Protected by WebAuthn</span>
+            <span>Prism Studio v2.8</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // SCREEN 1: All Photos Primary Dashboard
+  function AllPhotosScreen({ onStartSlideshow }) {
+    const [activeFilter, setActiveFilter] = useState("all");
+    const [sortMode, setSortMode] = useState("newest");
+    const navigate = useNavigate();
+
+    const filtered = samplePhotos.filter((p) => {
+      if (activeFilter === "public") return p.isPublic;
+      if (activeFilter === "vault") return !p.isPublic;
+      return true;
+    });
+
+    return (
+      <div className="flex flex-col w-full pb-20">
+        {/* Top Control Ribbon */}
+        <div className="w-full px-6 lg:px-8 py-4 bg-surface-container-low flex flex-wrap items-center justify-between gap-4 sticky top-16 z-30 border-b border-surface-container/60 shadow-sm">
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="relative">
+              <select
+                value={sortMode}
+                onChange={(e) => setSortMode(e.target.value)}
+                className="bg-surface-container text-on-surface text-xs px-3 py-2 rounded-lg cursor-pointer focus:outline-none border border-surface-container-high"
+              >
+                <option value="newest">Chronological (Newest first)</option>
+                <option value="oldest">Chronological (Oldest first)</option>
+                <option value="location">Group by Location</option>
+              </select>
+            </div>
+
+            <div className="flex items-center p-1 rounded-lg bg-surface-container text-xs">
+              <button
+                onClick={() => setActiveFilter("all")}
+                className={`px-3 py-1.5 rounded-md ${activeFilter === "all" ? "bg-surface-container-highest text-primary font-semibold" : "text-on-surface-variant"}`}
+              >
+                All (142)
+              </button>
+              <button
+                onClick={() => setActiveFilter("public")}
+                className={`px-3 py-1.5 rounded-md flex items-center gap-1.5 ${activeFilter === "public" ? "bg-surface-container-highest text-primary font-semibold" : "text-on-surface-variant"}`}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                <span>Public (98)</span>
+              </button>
+              <button
+                onClick={() => setActiveFilter("vault")}
+                className={`px-3 py-1.5 rounded-md flex items-center gap-1.5 ${activeFilter === "vault" ? "bg-surface-container-highest text-tertiary font-semibold" : "text-on-surface-variant"}`}
+              >
+                <span className="material-symbols-outlined text-[13px]">lock</span>
+                <span>Vault (44)</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => onStartSlideshow()}
+              className="flex items-center gap-2 h-9 px-4 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface text-xs font-semibold"
+            >
+              <span className="material-symbols-outlined text-[18px] text-secondary">play_circle</span>
+              <span>Launch Slideshow</span>
+            </button>
+            <label className="flex items-center gap-2 h-9 px-4 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary text-xs font-semibold cursor-pointer">
+              <span className="material-symbols-outlined text-[16px]">cloud_upload</span>
+              <span>Upload Photos</span>
+              <input type="file" className="hidden" multiple onChange={() => alert("Upload mocked client-side: Files staged for synchronization.")} />
+            </label>
+          </div>
+        </div>
+
+        {/* Gallery Content Area */}
+        <div className="px-6 lg:px-8 py-6 flex flex-col gap-8 max-w-7xl mx-auto w-full">
+          {/* Timeline Group: Petrolia, ON */}
+          <section className="flex flex-col gap-4">
+            <div className="flex items-baseline justify-between">
+              <div className="flex items-baseline gap-3">
+                <h2 className="text-xl font-bold text-on-surface">Sun, Nov 1</h2>
+                <span className="text-xs text-outline font-medium">Petrolia, ON · Calibration & Mirror Refractions</span>
+              </div>
+              <span className="text-xs font-mono text-on-surface-variant flex items-center gap-1">
+                <span className="material-symbols-outlined text-[14px]">photo_camera</span> Sony A7R V
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {filtered.slice(0, 6).map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => navigate(`/photo/${item.id}`)}
+                  className="group relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-md hover:scale-[1.02] hover:z-20 transition-all duration-300"
+                >
+                  <img src={item.url} alt={item.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute top-2 right-2 z-10">
+                    {item.isPublic ? (
+                      <span className="px-2 py-0.5 rounded-full bg-secondary-container/90 text-on-secondary-container text-[10px] font-mono font-semibold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span> Public
+                      </span>
+                    ) : (
+                      <span className="px-2 py-0.5 rounded-full bg-tertiary-container/90 text-on-tertiary-container text-[10px] font-mono font-semibold flex items-center gap-1">
+                        <span className="material-symbols-outlined text-[10px]">lock</span> Vault
+                      </span>
+                    )}
+                  </div>
+                  {item.burst && (
+                    <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-white text-[10px] font-mono flex items-center gap-0.5">
+                      <span>{item.burst}</span>
+                      <span className="material-symbols-outlined text-[11px]">filter_none</span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-end">
+                    <span className="text-xs font-semibold text-white truncate">{item.title}</span>
+                    <span className="text-[10px] text-outline font-mono">{item.specs}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Timeline Group: Toronto Architectural */}
+          <section className="flex flex-col gap-4 pt-4">
+            <div className="flex items-baseline justify-between">
+              <div className="flex items-baseline gap-3">
+                <h2 className="text-xl font-bold text-on-surface">Yesterday</h2>
+                <span className="text-xs text-outline font-medium">Toronto, ON · Architectural Nocturnes</span>
+              </div>
+              <span className="text-xs text-outline font-mono">Leica M11 & Sony A7R V</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div
+                onClick={() => navigate("/photo/p5")}
+                className="md:col-span-2 group relative aspect-[16/10] rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-lg hover:scale-[1.01] transition-all"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhBTm6yFqXnPqqICXl5QvR8angyj1SEjAp7996sNF1_IRGTGpL2VyzWXBwokPTHyplOxcTXHfT1PbwIPLLpVkLUGsedPDLdxpoCXGPe7pvhT1RJR2WrKwnglv_TgJuRu4E4Q4Hpv3y-G-BDeOJRV_EZ5uEKHNIoNZ0qoPnOld9ZF_9wirq_z9GAX59Iw2s2DR4PzOpg506ZCc-r38u42GpQG7gGW3GQs07Tw6n5Gw"
+                  alt="Toronto financial district"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent p-5 flex flex-col justify-end">
+                  <span className="text-sm font-semibold text-secondary">Public Stream · Toronto, ON</span>
+                  <h3 className="text-lg font-bold text-white">Financial District Monolith</h3>
+                  <span className="text-xs text-outline font-mono">35mm · f/1.4 · 1/120s · ISO 800</span>
+                </div>
+              </div>
+
+              <div
+                onClick={() => navigate("/photo/p7")}
+                className="group relative aspect-[3/4] md:aspect-auto rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-lg hover:scale-[1.01] transition-all"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtdANfaQCE7wbme5mrjhUprS7hR5OU8SE-fnv-bv2v7VK0GvV06mQ1obJYUMfuWU6kuR3T1iFtXdIvZgOmyCPJwZxrJSB--0zLkzRtxZBin02X8L95gxUJTalfizwurWirWbPoc_7_VlyWcwUuNP7H50mCdZHku_RFPHMCSHf6WcX88057Vzh4YLWaMYg5D_l4SK5fkZudcQUnSYBOXRPDzAtapQKe-lO2zNXXfa0"
+                  alt="Shinjuku rain reflection"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent p-4 flex flex-col justify-end">
+                  <span className="text-xs text-secondary font-mono">Nocturne Walk</span>
+                  <h4 className="text-sm font-bold text-white">Shinjuku Inversion</h4>
+                  <span className="text-[10px] text-outline font-mono">Leica Summilux 28mm</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Floating Bottom Status Pill */}
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30">
+          <div className="flex items-center gap-4 px-5 py-2.5 rounded-full bg-surface-container-low/90 backdrop-blur-xl shadow-2xl border border-surface-container-high text-xs">
+            <span className="flex items-center gap-1.5 font-mono text-on-surface">
+              <span className="w-2 h-2 rounded-full bg-secondary"></span> 142 photos
+            </span>
+            <span className="h-3 w-px bg-outline-variant/40"></span>
+            <span className="flex items-center gap-1 font-mono text-tertiary">
+              <span className="material-symbols-outlined text-[14px]">lock</span> 44 private
+            </span>
+            <span className="h-3 w-px bg-outline-variant/40"></span>
+            <span className="text-outline">Sync Status: Realtime Cloud</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // SCREEN 2: Public Stream Visitor Hub
+  function PublicStreamScreen({ onOpenAuth, onStartSlideshow }) {
+    const navigate = useNavigate();
+
+    return (
+      <div className="flex flex-col w-full pb-24">
+        {/* Notice Banner */}
+        <section className="relative overflow-hidden bg-surface-container-low px-6 py-6 md:px-10 shadow-md border-b border-surface-container">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-5">
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+                <span className="material-symbols-outlined text-secondary text-[24px]">public</span>
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <div className="flex items-center gap-2.5">
+                  <h1 className="text-xl font-bold text-on-surface">Alex Rivera’s Public Stream</h1>
+                  <span className="px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary text-xs font-mono font-semibold">
+                    98 Curated Shots
+                  </span>
+                </div>
+                <p className="text-xs text-on-surface-variant max-w-xl">
+                  Public darkroom portfolio. Encrypted vaults and raw personal sessions remain protected.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={onOpenAuth}
+                className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white text-surface-container-lowest text-xs font-semibold hover:bg-gray-100 transition-colors shadow-sm"
+              >
+                <span>Continue with Google</span>
+              </button>
+              <button
+                onClick={onStartSlideshow}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface text-xs font-medium"
+              >
+                <span className="material-symbols-outlined text-primary text-[18px]">play_circle</span>
+                <span>Slideshow</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Stream Gallery Grid */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-col gap-10 w-full">
+          {/* Highlights Bento */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-primary"></span>
+                <h2 className="text-lg font-bold text-on-surface">Curator’s Highlights</h2>
+              </div>
+              <span className="text-xs font-mono text-outline">Archival Master Prints</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+              <div
+                onClick={() => navigate("/photo/p6")}
+                className="md:col-span-8 group relative rounded-2xl overflow-hidden bg-surface-container-low shadow-md min-h-[380px] flex flex-col justify-end p-6 cursor-pointer"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-8nAp7qAk_oJEAN_KgbDwykfgdFItU0_3grsgUEDbe3Kj0nosSnWArwJexNVQb5PyA9GoqUjGvocsxC3WxyohYcCfj4U-BiYk54hzPWOGyOOT3NMn7j_6iTkg0ZpzrSrfvIHZnonfTG-KlVhXDDyGDvNbWyoU2XnYeSpo1rcfUQeiwJjEe3KtUSxUk4YWg1UM1i_9FyEIUPz1JxUCEsxsys4YSCfC3RC_dKYJaLg"
+                  alt="Patagonia sunrise"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+                <div className="relative z-10 flex flex-col gap-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-0.5 rounded-full bg-secondary text-on-secondary text-[10px] font-bold font-mono">Featured Public</span>
+                    <span className="text-xs text-on-surface-variant">Torres del Paine, Chile</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">First Light on Granite Spires</h3>
+                  <div className="flex items-center gap-3 text-xs text-outline font-mono">
+                    <span>Hasselblad H6D-100c</span>
+                    <span>•</span>
+                    <span>1/60s · f/8 · ISO 64</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:col-span-4 flex flex-col gap-4">
+                <div
+                  onClick={() => navigate("/photo/p8")}
+                  className="flex-1 group relative rounded-2xl overflow-hidden bg-surface-container cursor-pointer p-4 flex flex-col justify-end min-h-[180px]"
+                >
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc3KTvrYOJZf5BLYUnu3z3kih7K8YJcnxG1wK-Gt5g0JCfxXiAJMzklw0rznaEBvxd4tgqiq6j6JeRqIZjqTjz3-pbBVMiUiAV6_1qMqxwXd5lA2N6q9hdNXDJx-6Ce-NL3YVMdw6THi8ze4jVjHmMqHB2s5ijoy9Y7ol6loKYZZCBpMrUYj87-l5oBIBCVPG8zy0ahkmrNJWGCOo8OL6vNpxFokigkq1qQp45AqI"
+                    alt="Kyoto concrete"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+                  <div className="relative z-10">
+                    <span className="text-[10px] text-secondary font-mono">Concrete Study</span>
+                    <h4 className="text-sm font-bold text-white">Helical Void in Kyoto</h4>
+                    <span className="text-[10px] text-outline font-mono">Leica M11 Monochrom</span>
+                  </div>
+                </div>
+
+                <div
+                  onClick={() => navigate("/photo/p7")}
+                  className="flex-1 group relative rounded-2xl overflow-hidden bg-surface-container cursor-pointer p-4 flex flex-col justify-end min-h-[180px]"
+                >
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtdANfaQCE7wbme5mrjhUprS7hR5OU8SE-fnv-bv2v7VK0GvV06mQ1obJYUMfuWU6kuR3T1iFtXdIvZgOmyCPJwZxrJSB--0zLkzRtxZBin02X8L95gxUJTalfizwurWirWbPoc_7_VlyWcwUuNP7H50mCdZHku_RFPHMCSHf6WcX88057Vzh4YLWaMYg5D_l4SK5fkZudcQUnSYBOXRPDzAtapQKe-lO2zNXXfa0"
+                    alt="Shinjuku rain"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+                  <div className="relative z-10">
+                    <span className="text-[10px] text-secondary font-mono">Nocturne Reflection</span>
+                    <h4 className="text-sm font-bold text-white">Shinjuku Inversion</h4>
+                    <span className="text-[10px] text-outline font-mono">Summilux 28mm</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Autumn & Optics Grid */}
+          <div className="flex flex-col gap-4">
+            <h3 className="text-base font-bold text-on-surface">Petrolia Autumn Light Series</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+              {samplePhotos.slice(0, 6).map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => navigate(`/photo/${item.id}`)}
+                  className="group relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container-low cursor-pointer shadow-sm hover:shadow-xl transition-all"
+                >
+                  <img src={item.url} alt={item.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-2.5 flex flex-col justify-end">
+                    <span className="text-xs font-semibold text-white truncate">{item.title}</span>
+                    <span className="text-[10px] text-outline font-mono truncate">{item.specs}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // SCREEN 3: Compact 3-Column Mobile Feed
+  function CompactFeedScreen({ onStartSlideshow }) {
+    const navigate = useNavigate();
+
+    return (
+      <div className="flex flex-col w-full pb-20 max-w-4xl mx-auto">
+        {/* Profile Card Header */}
+        <section className="flex flex-col px-4 pt-4 pb-3 bg-surface-container-lowest border-b border-surface-container">
+          <div className="flex items-center gap-3">
+            <div className="relative w-14 h-14 rounded-full overflow-hidden bg-surface-container-high shrink-0 ring-2 ring-primary">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCESjFb7moav64OZkxg0blf8us5PjZRi0m-Z_6FTANrRz-GL_AzP4y4qjMMhqNk22ELjvp7ry4fwQjs3-wisM3Xkrs6SCKLOk9j0alt1kT6o3zjcbnsBC8FLBIFlwsmVWzzVUa7vAMCtb3aLwWRSlxbvyQflV9_E7wpNh2VVKthhPa_q_KHtYVHpEaRenqa_nn5j19OWMmeywDdSL5-Rkoc0Nmbb9Un0isreb-SDkY"
+                alt="Alex Rivera"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col min-w-0 flex-1">
+              <div className="flex items-center gap-1.5">
+                <h1 className="text-base font-bold text-on-surface truncate">Alex Rivera</h1>
+                <span className="px-1.5 py-0.5 rounded-full bg-primary/20 text-primary text-[10px] font-mono font-bold">PRO</span>
+              </div>
+              <p className="text-xs text-outline">@alexrivera · Toronto & Tokyo</p>
+              <p className="text-[11px] text-on-surface-variant font-mono truncate mt-0.5">Sony A7 IV · Leica M11 · Hasselblad</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-4 gap-2 mt-3 pt-2 text-center text-xs">
+            <div className="p-2 rounded-lg bg-surface-container-low font-mono">
+              <span className="block font-bold text-white">98</span>
+              <span className="text-[10px] text-outline">RAWs</span>
+            </div>
+            <div className="p-2 rounded-lg bg-surface-container-low font-mono">
+              <span className="block font-bold text-white">14</span>
+              <span className="text-[10px] text-outline">Folios</span>
+            </div>
+            <div className="p-2 rounded-lg bg-surface-container-low font-mono">
+              <span className="block font-bold text-white">4.8k</span>
+              <span className="text-[10px] text-outline">Views</span>
+            </div>
+            <div className="p-2 rounded-lg bg-surface-container-low font-mono">
+              <span className="block font-bold text-secondary">Active</span>
+              <span className="text-[10px] text-outline">Status</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 mt-3">
+            <button
+              onClick={onStartSlideshow}
+              className="flex-1 py-2 px-3 rounded-lg bg-primary text-on-primary text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm"
+            >
+              <span className="material-symbols-outlined text-[16px]">play_circle</span>
+              <span>Launch Slideshow</span>
+            </button>
+            <button
+              onClick={() => alert("Follow notification active")}
+              className="py-2 px-4 rounded-lg bg-surface-container-high text-on-surface text-xs font-medium"
+            >
+              Follow
+            </button>
+          </div>
+        </section>
+
+        {/* 3-Column High-Density Grid */}
+        <div className="flex items-center justify-between px-4 py-3">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-secondary"></span>
+            <span className="text-xs font-mono font-bold text-on-surface">Dispatches Archive</span>
+          </div>
+          <span className="text-[10px] font-mono text-outline">3-Column Compact</span>
+        </div>
+
+        <div className="grid grid-cols-3 gap-1 px-1">
+          {samplePhotos.map((photo) => (
+            <div
+              key={photo.id}
+              onClick={() => navigate(`/photo/${photo.id}`)}
+              className="group relative aspect-square bg-surface-container overflow-hidden cursor-pointer"
+            >
+              <img src={photo.url} alt={photo.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute bottom-1 left-1 px-1 py-0.5 rounded bg-surface-dim/80 text-on-surface text-[9px] font-mono backdrop-blur-sm">
+                {photo.specs.split('·')[0]}
+              </div>
+            </div>
+          ))}
+          {/* Repeating items for high density */}
+          {samplePhotos.map((photo) => (
+            <div
+              key={photo.id + "-copy"}
+              onClick={() => navigate(`/photo/${photo.id}`)}
+              className="group relative aspect-square bg-surface-container overflow-hidden cursor-pointer"
+            >
+              <img src={photo.url} alt={photo.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // SCREEN 4: Curator's Highlights & Dispatches
+  function CuratorShowcaseScreen({ onStartSlideshow }) {
+    const navigate = useNavigate();
+
+    return (
+      <div className="flex flex-col w-full pb-20 max-w-6xl mx-auto px-6 py-8 gap-8">
+        <div className="flex flex-col gap-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container w-fit text-xs font-mono text-secondary">
+            <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            <span>EXHIBITION GRADE SELECTIONS</span>
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-on-surface">Curator's Highlights & Deep Cuts</h1>
+          <p className="text-sm text-on-surface-variant max-w-2xl">
+            Large format medium-sensor captures from South America, Tokyo, and Ontario studio experiments. Zero social algorithm compression applied.
+          </p>
+        </div>
+
+        {/* Major Hero Card */}
+        <article
+          onClick={() => navigate("/photo/p6")}
+          className="group relative rounded-3xl overflow-hidden bg-surface-container-low flex flex-col justify-end shadow-2xl min-h-[460px] cursor-pointer"
+        >
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUsu26dUOArUHJg7QvFInyRzl0wQ2BIcnavJ8Aqh9kHjW7BEKq_XsDDxbmZ4pD9cgzmG9HCDuQ4appl1t4ujOxc2G-KlU4usg7afsTVw1DpQhmwAxiUIiZXA31JhQnkaQMPvNRhM4QfrAoXYRaWa_SzLPnCStlKbYx55lMo5aODd6fSuTJulQPIbdIYpZFWy27ry_GWr998WIh-Wd8Mm1x2_vBc8kYh9aL56mI-s4"
+            alt="Patagonia alpine sunrise"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/50 to-transparent"></div>
+          <div className="relative z-10 p-8 flex flex-col gap-3">
+            <span className="px-3 py-1 rounded-full bg-secondary text-on-secondary text-xs font-mono font-bold w-fit">
+              Hasselblad H6D-100c Master
+            </span>
+            <h2 className="text-3xl font-bold text-white">First Light on Granite Spires</h2>
+            <p className="text-sm text-on-surface-variant max-w-2xl">
+              Sub-zero katabatic wind conditions atop the southern ridge. 16-bit color depth captures subtle gradient separation between illuminated glaciers and twilight basalt shadows.
+            </p>
+            <div className="flex items-center gap-4 text-xs font-mono text-outline pt-2 border-t border-surface-container-high/60">
+              <span>Torres del Paine, Patagonia</span>
+              <span>•</span>
+              <span>100mm · f/2.2 · 1/800s · ISO 64</span>
+            </div>
+          </div>
+        </article>
+
+        {/* Duo Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            onClick={() => navigate("/photo/p8")}
+            className="group relative rounded-2xl overflow-hidden bg-surface-container-low min-h-[300px] p-6 flex flex-col justify-end cursor-pointer shadow-lg"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc3KTvrYOJZf5BLYUnu3z3kih7K8YJcnxG1wK-Gt5g0JCfxXiAJMzklw0rznaEBvxd4tgqiq6j6JeRqIZjqTjz3-pbBVMiUiAV6_1qMqxwXd5lA2N6q9hdNXDJx-6Ce-NL3YVMdw6THi8ze4jVjHmMqHB2s5ijoy9Y7ol6loKYZZCBpMrUYj87-l5oBIBCVPG8zy0ahkmrNJWGCOo8OL6vNpxFokigkq1qQp45AqI"
+              alt="Concrete helical void"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/60 to-transparent"></div>
+            <div className="relative z-10 flex flex-col gap-1">
+              <span className="text-xs font-mono text-secondary">Kyoto University Pavilion</span>
+              <h3 className="text-xl font-bold text-white">Helical Void in Concrete</h3>
+              <span className="text-xs text-outline font-mono">Leica M11 Monochrom · 28mm</span>
+            </div>
+          </div>
+
+          <div
+            onClick={() => navigate("/photo/p1")}
+            className="group relative rounded-2xl overflow-hidden bg-surface-container-low min-h-[300px] p-6 flex flex-col justify-end cursor-pointer shadow-lg"
+          >
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBamQtK_I2kDjgM2nohmkVHcvLf2rJCQO24VlLHGp3MAMcp5TkIRlvqu-sI7B3FWr6ZhF12UZcMHddXvt4B4QhzTTs6UvNC9UJKYP6hwlA-ulx9sSEbpbT86Ye-v8xe2VMlt-5hswyVvQaVWmqqc-7QxU4pFlnQf-WVXlEU0-Xo5P13QdcJPfYAjGhNaziTOGvlZvh85lVxWGagqf6klxJfuYAnR-F6wmQWmlwsnaI1grAgcC1BzrMm"
+              alt="Autumn drive"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/60 to-transparent"></div>
+            <div className="relative z-10 flex flex-col gap-1">
+              <span className="text-xs font-mono text-primary">Petrolia Countryside</span>
+              <h3 className="text-xl font-bold text-white">Autumn Drive along Maple Ave</h3>
+              <span className="text-xs text-outline font-mono">Sony A7 IV · 35mm · f/4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // SCREEN 5: Photo Inspector & EXIF Metadata Studio
+  function PhotoDetailScreen({ onStartSlideshow }) {
+    const navigate = useNavigate();
+    const [photo, setPhoto] = useState(samplePhotos[0]);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isPublic, setIsPublic] = useState(photo.isPublic);
+    const [isStarred, setIsStarred] = useState(false);
+    const [isZoomed, setIsZoomed] = useState(false);
+
+    return (
+      <div className="flex flex-col w-full h-[calc(100vh-4rem)] overflow-hidden select-none bg-surface-container-lowest">
+        {/* Top Elevated Action Bar */}
+        <header className="h-14 px-4 lg:px-6 flex items-center justify-between z-30 bg-surface-container-low border-b border-surface-container">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all text-xs"
+            >
+              <span className="material-symbols-outlined text-[18px]">arrow_back</span>
+              <span>Back</span>
+            </button>
+            <div className="h-4 w-px bg-surface-variant"></div>
+            <button
+              onClick={() => setIsPublic(!isPublic)}
+              className={`flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-mono font-semibold transition-all ${
+                isPublic ? "bg-secondary/15 text-secondary" : "bg-tertiary/15 text-tertiary"
+              }`}
+            >
+              <span className={`w-1.5 h-1.5 rounded-full ${isPublic ? "bg-secondary" : "bg-tertiary"}`}></span>
+              <span>{isPublic ? "Public Stream" : "Private Vault"}</span>
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onStartSlideshow}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container text-xs"
+            >
+              <span className="material-symbols-outlined text-[18px]">slideshow</span>
+              <span className="hidden sm:inline">Slideshow</span>
+            </button>
+            <button
+              onClick={() => setIsStarred(!isStarred)}
+              className={`p-2 rounded-lg hover:bg-surface-container ${isStarred ? "text-tertiary" : "text-on-surface-variant"}`}
+            >
+              <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: isStarred ? "'FILL' 1" : "'FILL' 0" }}>
+                star
+              </span>
+            </button>
+            <button
+              onClick={() => alert("Sharable link copied to clipboard")}
+              className="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container"
+            >
+              <span className="material-symbols-outlined text-[18px]">share</span>
+            </button>
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold ${
+                isSidebarOpen ? "bg-surface-container-high text-primary" : "text-on-surface-variant hover:bg-surface-container"
+              }`}
+            >
+              <span className="material-symbols-outlined text-[18px]">info</span>
+              <span className="hidden sm:inline">Inspector</span>
+            </button>
+          </div>
+        </header>
+
+        {/* Central Canvas & Inspector Split */}
+        <div className="flex-1 flex overflow-hidden relative">
+          <div className="flex-1 relative flex items-center justify-center bg-[#07080a] overflow-hidden">
+            <div className="relative max-w-full max-h-full flex items-center justify-center p-4">
+              <img
+                src={photo.url}
+                alt={photo.title}
+                onClick={() => setIsZoomed(!isZoomed)}
+                className={`max-h-[calc(100vh-9rem)] max-w-full object-contain rounded-lg shadow-2xl transition-all duration-300 ${
+                  isZoomed ? "scale-125 cursor-zoom-out" : "cursor-zoom-in"
+                }`}
+              />
+              <div className="absolute bottom-6 left-6 hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest/80 backdrop-blur-md text-on-surface-variant text-xs font-mono shadow-lg">
+                <span className="material-symbols-outlined text-[14px] text-primary">photo_camera</span>
+                <span>{photo.camera}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Inspector Panel */}
+          {isSidebarOpen && (
+            <aside className="w-80 md:w-96 flex flex-col bg-surface-container-low border-l border-surface-container overflow-y-auto p-5 gap-5 shrink-0 z-20">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-bold text-on-surface flex items-center gap-2">
+                  <span className="material-symbols-outlined text-primary text-[20px]">tune</span>
+                  <span>Frame Metadata</span>
+                </h3>
+                <span className="text-[10px] font-mono text-outline">RAW .ARW</span>
+              </div>
+
+              {/* Title & Story */}
+              <div className="p-3.5 rounded-xl bg-surface-container flex flex-col gap-2">
+                <span className="text-[10px] font-mono text-outline uppercase">Title & Narrative</span>
+                <input
+                  type="text"
+                  value={photo.title}
+                  onChange={(e) => setPhoto({ ...photo, title: e.target.value })}
+                  className="bg-surface-container-low rounded-lg px-2.5 py-1.5 text-xs text-on-surface font-semibold focus:outline-none"
+                />
+                <textarea
+                  defaultValue="Midday sunshine piercing the golden canopies on the return trip through Lambton County."
+                  rows="2"
+                  className="bg-surface-container-low rounded-lg px-2.5 py-1.5 text-xs text-on-surface-variant focus:outline-none resize-none"
+                />
+              </div>
+
+              {/* Technical Specifications */}
+              <div className="p-3.5 rounded-xl bg-surface-container flex flex-col gap-2.5">
+                <span className="text-[10px] font-mono text-outline uppercase">EXIF Specifications</span>
+                <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                  <div className="p-2 rounded bg-surface-container-low">
+                    <span className="text-[10px] text-outline block">Camera Body</span>
+                    <span className="text-white truncate block">Sony ILCE-7M4</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low">
+                    <span className="text-[10px] text-outline block">Lens Profile</span>
+                    <span className="text-white truncate block">FE 24-70mm GM</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low">
+                    <span className="text-[10px] text-outline block">Focal Length</span>
+                    <span className="text-white">35.0 mm</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low">
+                    <span className="text-[10px] text-outline block">Aperture</span>
+                    <span className="text-white">ƒ/4.0</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low">
+                    <span className="text-[10px] text-outline block">Shutter</span>
+                    <span className="text-white">1/500 sec</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low">
+                    <span className="text-[10px] text-outline block">ISO</span>
+                    <span className="text-white">160</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Location Tag */}
+              <div className="p-3.5 rounded-xl bg-surface-container flex flex-col gap-2">
+                <span className="text-[10px] font-mono text-outline uppercase">Location</span>
+                <span className="text-xs font-semibold text-on-surface">{photo.location}</span>
+                <div className="text-[10px] font-mono text-outline">42.8797° N, 82.1482° W · Ontario, Canada</div>
+              </div>
+            </aside>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // SCREEN 6: Profile & Account Settings Bento Hub
+  function ProfileSettingsScreen() {
+    const [name, setName] = useState("Alex Rivera");
+    const [bio, setBio] = useState("Exploring brutalist architecture, neon reflections, and generative light optics across Toronto and beyond.");
+    const [exifEnabled, setExifEnabled] = useState(true);
+    const [biometricEnabled, setBiometricEnabled] = useState(true);
+    const [saveToast, setSaveToast] = useState(false);
+
+    const handleSave = () => {
+      setSaveToast(true);
+      setTimeout(() => setSaveToast(false), 2500);
+    };
+
+    return (
+      <div className="flex flex-col w-full pb-24">
+        {/* Dynamic Top Ambient Accent */}
+        <div className="relative w-full overflow-hidden px-6 lg:px-8 pt-8 pb-10">
+          {/* Hero Profile Section */}
+          <div className="relative bg-surface-container-low rounded-2xl p-6 lg:p-8 shadow-xl border border-surface-container flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <div className="relative group">
+                <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md bg-surface-container ring-2 ring-primary">
+                  <img
+                    alt="Alex Rivera portrait"
+                    className="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu-ByIQtllxKYpMmkQsu2RTS1HPd1Z9dKXRvus8mqHXFq9tTWOLq7P9LA9E5EwGhYns1FvBj1B6Etufr2wdCerlAzNcsS9wuJ-ED9nKN9ftnAQWruUf13oLKMaud09kbTpntKwyI5hX9p5hT_NxpnDpOSHQJ0Ud9OseMR2Jf88aomQ28aE49Tuo7-QON3QzNwqzuu374nHjr2XjfzHyXrzwEx0ZoRotMnkmoNmvCs"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h1 className="text-2xl font-bold text-on-surface">{name}</h1>
+                  <span className="text-xs font-mono text-outline">@alexrivera</span>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary text-xs font-semibold">
+                    <span>Google SSO Active</span>
+                  </div>
+                </div>
+                <p className="text-xs text-on-surface-variant max-w-xl">{bio}</p>
+                <div className="flex items-center gap-4 text-outline text-xs font-mono mt-1">
+                  <span>alex.rivera@studio-prism.io</span>
+                  <span>•</span>
+                  <span>Toronto, Canada</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleSave}
+                className="px-5 py-2.5 rounded-xl bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container transition-all shadow-md"
+              >
+                Save Settings
+              </button>
+            </div>
+          </div>
+
+          {/* Quick Stats Metric Strip */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+            <div className="bg-surface-container-low rounded-xl p-4 shadow-sm border border-surface-container">
+              <span className="text-[10px] font-mono uppercase text-outline">Archival Photos</span>
+              <div className="text-2xl font-bold text-on-surface mt-1">142</div>
+            </div>
+            <div className="bg-surface-container-low rounded-xl p-4 shadow-sm border border-surface-container">
+              <span className="text-[10px] font-mono uppercase text-outline">Public Stream Items</span>
+              <div className="text-2xl font-bold text-secondary mt-1">98 (69%)</div>
+            </div>
+            <div className="bg-surface-container-low rounded-xl p-4 shadow-sm border border-surface-container">
+              <span className="text-[10px] font-mono uppercase text-outline">Vault Encrypted</span>
+              <div className="text-2xl font-bold text-tertiary mt-1">44 Items</div>
+            </div>
+            <div className="bg-surface-container-low rounded-xl p-4 shadow-sm border border-surface-container">
+              <span className="text-[10px] font-mono uppercase text-outline">Active Storage</span>
+              <div className="text-2xl font-bold text-on-surface mt-1">148.4 GB</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Settings Bento */}
+        <div className="px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            <div className="bg-surface-container-low rounded-xl p-6 shadow-md border border-surface-container flex flex-col gap-4">
+              <h2 className="text-base font-bold text-on-surface">Public Bio & Portfolio Slugs</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[10px] font-mono uppercase text-outline">Display Name</label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full h-10 px-3 rounded-lg bg-surface-container text-xs text-on-surface focus:outline-none"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[10px] font-mono uppercase text-outline">Custom Portfolio URL</label>
+                  <div className="flex items-center h-10 px-3 rounded-lg bg-surface-container text-xs">
+                    <span className="text-outline font-mono">prism.gallery/</span>
+                    <span className="text-primary font-mono ml-0.5">alexrivera</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-mono uppercase text-outline">Artist Statement</label>
+                <textarea
+                  rows="3"
+                  value={bio}
+                  onChange={(e) => setBio(e.target.value)}
+                  className="w-full p-3 rounded-lg bg-surface-container text-xs text-on-surface focus:outline-none resize-none"
+                />
+              </div>
+
+              <div className="flex items-center justify-between p-3 rounded-lg bg-surface-container">
+                <div className="flex flex-col">
+                  <span className="text-xs font-semibold text-on-surface">Public EXIF Camera Metadata</span>
+                  <span className="text-[10px] text-outline">Allow visitors to view focal length, ISO, and lens model</span>
+                </div>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={exifEnabled}
+                    onChange={() => setExifEnabled(!exifEnabled)}
+                    className="sr-only peer"
+                  />
+                  <div className="w-10 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            <div className="bg-surface-container-low rounded-xl p-6 shadow-md border border-surface-container flex flex-col gap-4">
+              <h2 className="text-base font-bold text-on-surface">Security & Biometrics</h2>
+              <div className="flex items-center justify-between p-3 rounded-lg bg-surface-container">
+                <div className="flex flex-col">
+                  <span className="text-xs font-semibold text-on-surface">TouchID / Biometric Vault</span>
+                  <span className="text-[10px] text-outline">Require prompt to decrypt locked folios</span>
+                </div>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={biometricEnabled}
+                    onChange={() => setBiometricEnabled(!biometricEnabled)}
+                    className="sr-only peer"
+                  />
+                  <div className="w-10 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+                </label>
+              </div>
+
+              <div className="p-3.5 rounded-lg bg-surface-container flex flex-col gap-2">
+                <span className="text-xs font-semibold text-on-surface">Full Archival Export</span>
+                <span className="text-[10px] text-outline">Download all 142 uncompressed originals with full XMP sidecars (.tar)</span>
+                <button
+                  onClick={() => alert("Packaging export archive... You will receive an encrypted notification.")}
+                  className="w-fit px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-xs text-on-surface font-semibold mt-1"
+                >
+                  Start Archival Export
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {saveToast && (
+          <div className="fixed bottom-10 right-10 bg-secondary text-on-secondary px-4 py-2.5 rounded-xl shadow-2xl text-xs font-semibold flex items-center gap-2 z-50 animate-bounce">
+            <span className="material-symbols-outlined text-[18px]">check_circle</span>
+            <span>Settings saved successfully!</span>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // SCREEN 7: Private Vault Screen
+  function VaultScreen({ onOpenAuth }) {
+    const [unlocked, setUnlocked] = useState(false);
+    const [pin, setPin] = useState("");
+    const navigate = useNavigate();
+
+    const handleUnlock = (e) => {
+      e.preventDefault();
+      if (pin === "1234" || pin === "") {
+        setUnlocked(true);
+      } else {
+        alert("Incorrect PIN code. Hint: Use 1234 or leave blank.");
+      }
+    };
+
+    if (!unlocked) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-8rem)] p-6 text-center">
+          <div className="w-16 h-16 rounded-2xl bg-surface-container-high text-tertiary flex items-center justify-center mb-4 shadow-xl">
+            <span className="material-symbols-outlined text-[32px]">lock</span>
+          </div>
+          <h1 className="text-2xl font-bold text-on-surface">Private Darkroom Vault</h1>
+          <p className="text-xs text-on-surface-variant max-w-sm mt-1 mb-6">
+            Encrypted storage containing 44 RAW frames, personal unreleased series, and experimental negatives.
+          </p>
+          <form onSubmit={handleUnlock} className="flex flex-col gap-3 w-full max-w-xs">
+            <input
+              type="password"
+              placeholder="Enter Vault PIN (Hint: 1234)"
+              value={pin}
+              onChange={(e) => setPin(e.target.value)}
+              className="w-full px-4 py-2.5 rounded-xl bg-surface-container text-center text-on-surface text-sm tracking-widest focus:outline-none border border-surface-container-high"
+            />
+            <button
+              type="submit"
+              className="w-full py-2.5 rounded-xl bg-tertiary text-on-tertiary text-xs font-bold shadow-md hover:bg-tertiary-fixed transition-colors"
+            >
+              Unlock Vault
+            </button>
+            <button
+              type="button"
+              onClick={onOpenAuth}
+              className="text-xs text-outline hover:text-on-surface underline mt-2"
+            >
+              Authenticate via TouchID / Google
+            </button>
+          </form>
+        </div>
+      );
+    }
+
+    return (
+      <div className="flex flex-col w-full px-6 lg:px-8 py-8 gap-6 max-w-6xl mx-auto pb-24">
+        <div className="flex items-center justify-between border-b border-surface-container pb-4">
+          <div className="flex items-center gap-3">
+            <span className="material-symbols-outlined text-tertiary text-[24px]">lock_open</span>
+            <div>
+              <h2 className="text-xl font-bold text-on-surface">Private Vault Unlocked</h2>
+              <p className="text-xs text-outline">Session active · 44 restricted files</p>
+            </div>
+          </div>
+          <button
+            onClick={() => setUnlocked(false)}
+            className="px-3 py-1.5 rounded-lg bg-surface-container text-xs text-on-surface hover:bg-surface-bright"
+          >
+            Lock Vault
+          </button>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {samplePhotos.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => navigate(`/photo/${item.id}`)}
+              className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-md"
+            >
+              <img src={item.url} alt={item.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+              <div className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-tertiary/20 text-tertiary text-[10px] font-mono">
+                ENCRYPTED
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-end">
+                <span className="text-xs font-bold text-white truncate">{item.title}</span>
+                <span className="text-[10px] text-outline font-mono">{item.specs}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Root App Component
+  function App() {
+    const [authModalOpen, setAuthModalOpen] = useState(false);
+    const [slideshowOpen, setSlideshowOpen] = useState(false);
+
+    return (
+      <div className="min-h-screen bg-surface-container-lowest text-on-surface">
+        <Sidebar />
+        <Header
+          onOpenAuth={() => setAuthModalOpen(true)}
+          onStartSlideshow={() => setSlideshowOpen(true)}
+        />
+
+        <main className="lg:pl-64 pt-16 min-h-screen">
+          <Routes>
+            <Route path="/" element={<AllPhotosScreen onStartSlideshow={() => setSlideshowOpen(true)} />} />
+            <Route path="/public-stream" element={<PublicStreamScreen onOpenAuth={() => setAuthModalOpen(true)} onStartSlideshow={() => setSlideshowOpen(true)} />} />
+            <Route path="/compact-feed" element={<CompactFeedScreen onStartSlideshow={() => setSlideshowOpen(true)} />} />
+            <Route path="/curator-showcase" element={<CuratorShowcaseScreen onStartSlideshow={() => setSlideshowOpen(true)} />} />
+            <Route path="/photo/:id" element={<PhotoDetailScreen onStartSlideshow={() => setSlideshowOpen(true)} />} />
+            <Route path="/profile-settings" element={<ProfileSettingsScreen />} />
+            <Route path="/vault" element={<VaultScreen onOpenAuth={() => setAuthModalOpen(true)} />} />
+          </Routes>
+        </main>
+
+        <MobileNav />
+
+        {/* Global Modals */}
+        <SlideshowModal isOpen={slideshowOpen} onClose={() => setSlideshowOpen(false)} />
+        <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} />
+      </div>
+    );
+  }
+
+  // Render Root with MemoryRouter
+  const root = createRoot(document.getElementById("root"));
+  root.render(
+    <MemoryRouter initialEntries={["/"]}>
+      <App />
+    </MemoryRouter>
+  );
+</script>
+
+</body>
+</html>
